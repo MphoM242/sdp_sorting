@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
-
+.resizedButton{
+  width: 200px;
+  height: 250px;
+  margin-right: 30px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
