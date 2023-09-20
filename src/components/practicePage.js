@@ -1,7 +1,7 @@
 // src/components/practicePage.js
 import React from 'react';
 
-const PracticePage = () => {
+const practicePage = () => {
   return (
     <div>
       <h2>Practice Mode</h2>
@@ -10,4 +10,4 @@ const PracticePage = () => {
   );
 };
 
-export default PracticePage;
+export default practicePage;
