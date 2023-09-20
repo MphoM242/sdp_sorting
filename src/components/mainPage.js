@@ -7,7 +7,7 @@ const MainPage = () => {
     <div>
       <h1>Welcome to Your Website!!!</h1>
       <Link to="/practice">
-        <button>Practice Mode</button>
+        <button>Practice</button>
       </Link>
       <Link to="/test">
         <button>Test Mode</button>

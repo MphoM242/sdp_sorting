@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainPage from './components/MainPage';
+//import MainPage from './components/MainPage';
 import PracticePage from './components/PracticePage';
 import TestPage from './components/TestPage';
+import MainPage from './components/MainPage';
 
 function App() {
   return (
