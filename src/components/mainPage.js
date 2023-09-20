@@ -1,7 +1,7 @@
 // src/components/mainPage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import pracButton from '.public/pracBut.jpg';
+import pracButton from './public/pracBut.jpg';
 
 const MainPage = () => {
   return (
