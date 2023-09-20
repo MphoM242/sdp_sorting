@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const mainPage = () => {
+const MainPage = () => {
   return (
     <div>
       <h1>Welcome to Your Website!!!</h1>
@@ -16,4 +16,4 @@ const mainPage = () => {
   );
 };
 
-export default mainPage;
+export default MainPage;

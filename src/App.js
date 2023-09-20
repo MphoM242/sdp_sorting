@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import mainPage from './components/mainPage';
-import practicePage from './components/practicePage';
-import testPage from './components/testPage';
+import MainPage from './components/MainPage';
+import PracticePage from './components/PracticePage';
+import TestPage from './components/TestPage';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/practice" element={<practicePage />} />
-        <Route path="/test" element={<testPage />} />
-        <Route path="/" element={<mainPage />} />
+        <Route path="/practice" element={<PracticePage />} />
+        <Route path="/test" element={<TestPage />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
     </Router>
   );
