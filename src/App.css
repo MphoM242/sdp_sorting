@@ -3,11 +3,19 @@
   align-items: center;
   justify-content: center;
 }
+
+.button-container{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
 .resizedButton{
   width: 200px;
   height: 250px;
   margin-right: 30px;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
