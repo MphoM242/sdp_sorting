@@ -1,0 +1,16 @@
+/* src/components/PracticePage.css (Create this file if it doesn't exist) */
+.practice-page {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 25%;
+    background-color: #89ec8b;
+    padding: 20px;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
