@@ -1,16 +1,40 @@
 /* src/components/PracticePage.css (Create this file if it doesn't exist) */
 .practice-page {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
   }
   
-  .sidebar {
-    width: 25%;
-    background-color: #89ec8b;
-    padding: 20px;
+  .h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
   }
-  
+
   .content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 30px;
+    text-align: center;
+
+  }
+
+  .definition{
+    font-size: 20px;
+    text-align: left;
+    background-color: rgb(158, 231, 161);
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+
+  .sortingExample{
+    font-size: 23px;
+    text-align: left;
+    background-color: rgb(247, 227, 227);
+    padding: 10px;
+    margin-bottom: 30px;
   }
   

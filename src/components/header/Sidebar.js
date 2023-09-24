@@ -58,7 +58,7 @@ return (
 					marginLeft: "200px",
 					color: "green" }}
 		>
-			GeeksforGeeks
+			Practice Mode
 		</h1>
 		</Nav>
 		<SidebarNav sidebar={sidebar}>

@@ -6,15 +6,15 @@ import testBut from '../images/testBut.jpg';
 
 const MainPage = () => {
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '150vh'}}
-      >
-
-      <h1>Data Structures and Algorithms: SORTING</h1>
-      <p> Practice mode will allow you to practice sorting algorithms.<br />
+    <div style={{backgroundColor: '#f5f5f5', padding: '30px'}}>
+      
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#d3d3d3', padding: '20px'}}>
+      <h1 style={{fontSize:'35px'}}>Data Structures and Algorithms: SORTING</h1>
+      <p style={{fontSize: '25px'}}> Practice mode will allow you to practice sorting algorithms.<br />
           Test mode will allow you to write tests set by your Lecturer.<br />
           <b>NOTE: </b> Feedback may be sent to WITS Moodle page! <br />
       </p>
-      <h2>Choose mode:</h2>
+      <h2 style={{fontSize:'30px'}}>Choose mode:</h2>
       <div class="button container">
         <Link to="/practice">
           <img src={pracBut} alt="Practice Mode" className="resizedButton" />
@@ -24,11 +24,12 @@ const MainPage = () => {
         </Link>
       </div>
       <br />
-      <p>SD Project By: <i>"insert cooler group name"</i><br/>
+      <p style={{fontSize:'20px',color: 'blue'}}>SD Project By: <i>"insert cooler group name"</i><br/>
       This version is just to get things started and is not the final product (obviously lol).
       </p>
     </div>
-    
+
+    </div>
   );
 };
 
