@@ -7,6 +7,7 @@ const PracticePage = () => {
   return (
     <div>
       <Sidebar />
+      
       <div className='content'>
         <h1>Sorting:</h1>
         <h2>What is Sorting?</h2>
@@ -62,6 +63,7 @@ const PracticePage = () => {
         <a href='/'>Back</a>
       </div>
     </div>
+
     </div>
   );
 };
