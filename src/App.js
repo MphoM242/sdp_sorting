@@ -10,6 +10,7 @@ import Insertion from './components/sorts/Insertion';
 import Selection from './components/sorts/Selection';
 import Merge from './components/sorts/Merge';
 import Quick from './components/sorts/Quick';
+import SortingAlgorithmsPage from './components/sorts/SortingAlgorithmsPage';
 
 import {OtherSort,Overview,Practice} from './components/sorts/OtherSort';
 
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/practice" element={<PracticePage />} />
+        <Route path="/visualizer" element={<SortingAlgorithmsPage />} />
         <Route path="/bubble" element={<Bubble />} />
         <Route path="/insertion" element={<Insertion />} />
         <Route path="/selection" element={<Selection />} />
