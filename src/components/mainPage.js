@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import pracBut from '../images/pracBut.jpg';
 import testBut from '../images/testBut.jpg';
+import visbut from '../images/visbut.jpeg';
 
 const MainPage = () => {
   return (
@@ -21,6 +22,9 @@ const MainPage = () => {
         </Link>
         <Link to="/test">
           <img src={testBut} alt="Test Mode" className="resizedButton" />
+        </Link>
+        <Link to="/visualizer">
+          <img src={visbut} alt="Visualizer Mode" className="resizedButton" />
         </Link>
       </div>
       <br />
