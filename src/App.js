@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainPage from './components/MainPage';
-import PracticePage from './components/PracticePage';
-import TestPage from './components/TestPage';
+import MainPage from './components/mainPage';
+import PracticePage from './components/practicePage';
+import TestPage from './components/testPage';
 import Bubble from './components/sorts/Bubble';
 import Insertion from './components/sorts/Insertion';
 import Selection from './components/sorts/Selection';
