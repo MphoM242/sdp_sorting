@@ -60,7 +60,7 @@ const PracticePage = () => {
       </div>
 
       <div className='backButton'>
-        <a href='/'>Back</a>
+        <a href='/main'>Back</a>
       </div>
     </div>
 

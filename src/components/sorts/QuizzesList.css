@@ -1,0 +1,39 @@
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 25px;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: rgb(2, 106, 45);
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 20px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 3px solid #dddddd;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 6px solid rgb(2, 106, 45);
+}
+
+.quiz-row:hover{
+    background-color: rgb(158, 190, 156);
+    cursor: pointer;
+}
+
+.quiz-row::selection{
+    background-color: rgb(77, 244, 77);
+    cursor: pointer;
+}

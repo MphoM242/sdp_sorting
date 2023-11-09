@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SortingAlgorithmsPage.css'; 
 import BubbleSortVisualizer from './BubbleSortVisualizer';
-import MergeSortVisualizer from './MergeSortVisualizer';
+//import MergeSortVisualizer from './MergeSortVisualizer';
 //import QuickSortVisualizer from './QuickSortVisualizer';
 import menuIcon from  '../../images/MenuIcon.png';
 
@@ -74,10 +74,10 @@ const SortingAlgorithmsPage = () => {
             visualizerAlgorithm.title === 'Bubble Sort' ? (
               <BubbleSortVisualizer />
             ) : 
-             visualizerAlgorithm.title === 'Merge Sort' ? (
+             /*visualizerAlgorithm.title === 'Merge Sort' ? (
                 <MergeSortVisualizer />
               ) :
-              /*
+              
               (
                 visualizerAlgorithm.title === 'Quick Sort' ? (
                   <QuickSortVisualizer />

@@ -8,32 +8,32 @@ import { BsFillSuitDiamondFill } from "react-icons/bs";
 export const SidebarData = [
 {
 	title: "Bubble Sort",
-	path: "/bubble",
+	path: "/practice/bubble",
 	icon: <BsFillSuitDiamondFill />,
 },
 {
 	title: "Insertion Sort",
-	path: "/insertion",
+	path: "/practice/insertion",
 	icon: <BsFillSuitDiamondFill />,
 },
 {
 	title: "Selection Sort",
-	path: "/selection",
+	path: "/practice/selection",
 	icon: <BsFillSuitDiamondFill />,
 },
 {
 	title: "Merge Sort",
-	path: "/merge",
+	path: "/practice/merge",
 	icon: <BsFillSuitDiamondFill />,
 },
 {
 	title: "Quick Sort",
-	path: "/quick",
+	path: "/practice/quick",
 	icon: <BsFillSuitDiamondFill />,
 },
 {
 	title: "Other",
-	path: "/other",
+	path: "/practice/other",
 	icon: <IoIcons.IoMdHelpCircle />,
 
 	iconClosed: <RiIcons.RiArrowDownSFill />,
