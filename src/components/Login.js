@@ -16,6 +16,7 @@ const Login = () => {
             const user = userCredential.user;
             navigate("/");
             console.log(user);
+            window.alert("Signed in successfully:"+ user.email);
         })
         .catch((error) => {
             const errorCode = error.code;

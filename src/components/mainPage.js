@@ -10,7 +10,7 @@ import {signOut} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
-  
+
   useEffect(()=>{
     onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -18,24 +18,31 @@ const MainPage = () => {
           // https://firebase.google.com/docs/reference/js/firebase.User
           const uid = user.uid;
           // ...
-          console.log("uid", uid)
+          console.log("uid", uid);
+          window.alert("still signed in");
         } else {
           // User is signed out
           // ...
-          console.log("user is logged out")
+          console.log("user is logged out");
+          window.alert("user is logged out");
         }
       });
      
   }, [])
   const navigate = useNavigate();
   const handleLogout = () => {
+    //get user name:
+    const user = auth.currentUser;
+
     signOut(auth).then(() => {
       // Sign-out successful.
       navigate("/login");
-      console.log("Signed out successfully")
+      console.log("Signed out successfully");
+      window.alert("Signed out successfully:"+user.email);
     }).catch((error) => {
       // An error happened.
-      console.log("sign out error")
+      console.log("sign out error", error);
+      window.alert("sign out error"+user.email);
     });
   }
   return (
