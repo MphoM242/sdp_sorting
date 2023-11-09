@@ -53,13 +53,14 @@ const  MergeQuizzesPage= () => {
         <div>
           <h2>Quiz: {selectedQuiz.title}</h2>
           {/* Render the quiz content here */}
+          
           <button>Start</button>
           <div>
             <a href='/practice/merge/quizzes'>Back to Quiz List</a>
           </div>
         </div>
       ) : (
-        <QuizzesList onStartQuiz={onStartQuiz} />
+        <QuizzesList quizzes={quizzes} onStartQuiz={onStartQuiz} />
       )}
       <div>
         <a href='/practice/merge'>Back to Merge-Sort main page</a>

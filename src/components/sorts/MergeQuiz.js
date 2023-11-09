@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function MergeSort() {
   const [questions] = useState([
     { inputArray: [5, 3, 1, 2, 4], correctAnswer: [1, 2, 3, 4, 5] },
-    { inputArray: [10, 8, 6, 4, 2], correctAnswer: [2, 4, 6, 8, 10] },
+    { inputArray: [10, 8, 6, 4, 2], correctAnswer: [2, 4, 6, 8, 10]},
     // Add more questions here
   ]);
 
