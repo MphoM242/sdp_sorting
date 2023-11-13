@@ -2,10 +2,12 @@
 import React from 'react';
 import './PracticePageStyle.css'; 
 import Sidebar from "./header/Sidebar.js";
+import Header from "./header/Header.js";
 
 const PracticePage = () => {
   return (
     <div>
+      <Header/>
       <Sidebar />
       
       <div className='content'>

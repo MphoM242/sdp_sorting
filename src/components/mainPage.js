@@ -8,6 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from './Firebase'
 import {signOut} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import Header from './header/Header';
 
 const MainPage = () => {
 
@@ -19,7 +20,7 @@ const MainPage = () => {
           const uid = user.uid;
           // ...
           console.log("uid", uid);
-          window.alert("still signed in");
+          window.alert("still signed in: "+ user.email);
         } else {
           // User is signed out
           // ...
@@ -30,7 +31,7 @@ const MainPage = () => {
      
   }, [])
   const navigate = useNavigate();
-  const handleLogout = () => {
+  /*const handleLogout = () => {
     //get user name:
     const user = auth.currentUser;
 
@@ -44,13 +45,14 @@ const MainPage = () => {
       console.log("sign out error", error);
       window.alert("sign out error"+user.email);
     });
-  }
+  }*/
   return (
     <section>
     <nav>
     <div style={{backgroundColor: '#f5f5f5', padding: '30px'}}>
       
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', backgroundColor: '#d3d3d3', padding: '20px'}}>
+      <Header />
       <h1 style={{fontSize:'35px'}}>Data Structures and Algorithms: SORTING</h1>
       <p style={{fontSize: '25px'}}> Practice mode will allow you to practice sorting algorithms.<br />
           Test mode will allow you to write tests set by your Lecturer.<br />
@@ -71,7 +73,6 @@ const MainPage = () => {
       <br />
       <p style={{fontSize:'20px',color: 'blue'}}>SD Project By: <i>"insert cooler group name"</i><br/>
       </p>
-      <button onClick={handleLogout} style={{fontSize:'20px',color: 'red'}}>Logout</button>
     </div>
     </div>
     </nav>

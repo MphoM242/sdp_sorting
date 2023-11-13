@@ -2,69 +2,42 @@
 import React,{useState,useEffect} from 'react';
 import Quiz from './Quiz';
 import './QuizzesList.css';
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {
-  collection,getFirestore,getDoc, onSnapshot,setDoc,doc,updateDoc, increment, Timestamp,addDoc
-} from 'firebase/firestore';
-import {query, where, getDocs } from "firebase/firestore";
-  
-import 'firebase/firestore';
-import { auth } from '../Firebase';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB5y7LSWCoG2xLtotgvJQnvdWranfNmLgc",
-  authDomain: "sortingplugin.firebaseapp.com",
-  projectId: "sortingplugin",
-  storageBucket: "sortingplugin.appspot.com",
-  messagingSenderId: "821141428347",
-  appId: "1:821141428347:web:c76ae542619aac9d536ade",
-  measurementId: "G-P4VSY791C2"
-};
-
-// Initialize Firebase
-initializeApp(firebaseConfig);
-const db = getFirestore();
-const QuizzesRef = collection(db, "Quizzes");
-
+import { getFirestore, collection, getDocs, or } from 'firebase/firestore';
+import { query, where,orderBy } from 'firebase/firestore';
+import Header from '../header/Header';
 //Fetch data from firebase
-const QuizzesList = ({onStartQuiz}) => {
+const DBQuizzesList = ({onStartQuiz}) => {
 
   const [quizzes, setQuizzes] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try{
-        const user=auth.currentUser;
-        if(!user){
-          throw new Error('User is not logged in!!!');
-        }
-      
-      //const db = getFirestore();
-      const q=query(QuizzesRef,where('Sort Type','==','Merge'));
-      const querySnapshot = await getDocs(q);
-      const newData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setQuizzes(newData); 
-    }catch(error){
-      console.log("Firestore Error",error);
-    }
-  };
+    useEffect(()=>{
+      const fetchData=async()=>{
+        const db=getFirestore();
+        const quizzesCol=collection(db,'Quizzes');
+        //const user=firebase.auth().currentUser;
+
+          try{
+            const q=query(quizzesCol,where('Sort Type','==','Merge'),orderBy('Quiz ID','asc'));
+            const querySnapshot=await getDocs(q);
+            const data=querySnapshot.docs.map(doc=>doc.data());
+            setQuizzes(data);
+          }
+          catch(error){
+            console.log("Error getting quizzes: ",error);
+          }
+    };
     fetchData();
   }, []);
 
   return (
     <div>
-      <h1>Data from Firebase</h1>
+      <Header/>
+      <h1>Merge Quizzes(firestore):</h1>
     <table className="styled-table">
       <thead>
         <tr>
+          <th>Quiz ID</th>
           <th>Title</th>
           <th>Description</th>
-          <th>Attempts</th>
         </tr>
       </thead>
       <tbody>
@@ -81,4 +54,4 @@ const QuizzesList = ({onStartQuiz}) => {
   );
 };
 
-export default QuizzesList;
+export default DBQuizzesList;

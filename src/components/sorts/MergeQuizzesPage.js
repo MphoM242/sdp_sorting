@@ -1,6 +1,7 @@
 // App.js
 import React, { useState } from 'react';
 import QuizzesList from './QuizzesList';
+import DBQuizzesList from './DBQuizzesList';
 
 const  MergeQuizzesPage= () => {
   const [quizzes, setQuizzes] = useState([
@@ -48,7 +49,7 @@ const  MergeQuizzesPage= () => {
 
   return (
     <div>
-      <h1>Quiz List</h1>
+      <h1>Practice Quizzes: </h1>
       {selectedQuiz ? (
         <div>
           <h2>Quiz: {selectedQuiz.title}</h2>
@@ -60,7 +61,7 @@ const  MergeQuizzesPage= () => {
           </div>
         </div>
       ) : (
-        <QuizzesList quizzes={quizzes} onStartQuiz={onStartQuiz} />
+        <DBQuizzesList onStartQuiz={onStartQuiz} />
       )}
       <div>
         <a href='/practice/merge'>Back to Merge-Sort main page</a>

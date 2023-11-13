@@ -1,11 +1,12 @@
 // src/components/practicePage.js
 import React from 'react';
 import './MergeSortStyle.css'; 
+import Header from "../header/Header.js";
 
 const MergeSort= () => {
   return (
     <div>
-      
+      <Header/>
       <div className='content'>
         <h1>Sorting:</h1>
         <h2>What is merge sort?</h2>

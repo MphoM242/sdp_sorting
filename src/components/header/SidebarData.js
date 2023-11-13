@@ -25,6 +25,17 @@ export const SidebarData = [
 	title: "Merge Sort",
 	path: "/practice/merge",
 	icon: <BsFillSuitDiamondFill />,
+
+	iconClosed: <RiIcons.RiArrowDownSFill />,
+	iconOpened: <RiIcons.RiArrowUpSFill />,
+
+	subNav: [
+	{
+		title: "Practice Quizzes",
+		path: "/practice/merge/quizzes",
+		icon: <IoIcons.IoIosPaper />,
+	},
+	]
 },
 {
 	title: "Quick Sort",

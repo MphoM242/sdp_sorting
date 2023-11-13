@@ -48,11 +48,6 @@ function App() {
     return () => unsubscribe();
   }, []);
 
-  if (loading) {
-    // Show a loading indicator while checking authentication state
-    return <div>Loading...</div>;
-  }
-
   return (
     <Router>
       <Routes>
@@ -63,7 +58,7 @@ function App() {
         <Route path="/practice/insertion" element={<Insertion />} />
         <Route path="/practice/selection" element={<Selection />} />
         <Route path="/practice/merge" element={<Merge />} />
-        <Route path="/practice/merge/quizzes" element={<MergeQuizzesPage />} />
+        <Route path="/practice/merge/quizzes" element={<MergeQuizzesPage /> }/>
         <Route path="/practice/quick" element={<Quick />} />
       
         <Route path="/other" element={<OtherSort />} />
