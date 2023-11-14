@@ -1,6 +1,4 @@
 import React from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
 import { BsFillSuitDiamondFill } from "react-icons/bs";
@@ -21,6 +19,10 @@ export const SidebarData = [
 
 	subNav: [
 	{
+		title: "Overview", 
+		path: "/practice/merge", 
+		icon: <IoIcons.IoIosPaper />},
+	{
 		title: "Practice Quizzes",
 		path: "/practice/merge/quizzes",
 		icon: <IoIcons.IoIosPaper />,
@@ -34,12 +36,12 @@ export const SidebarData = [
 },
 {
 	title: "Release Notes",
-	path: "/practice/other",
-	icon: <IoIcons.IoMdHelpCircle />,
+	path: "/Release_Notes",
+	icon: <IoIcons.IoIosPaper />,
 },
 {
 	title: "User Manual",
-	path: "/practice/other",
-	icon: <IoIcons.IoMdHelpCircle />,
+	path: "/User_Manual",
+	icon: <IoIcons.IoIosPaper />,
 },
 ];

@@ -64,7 +64,6 @@ const  MergeQuizzesPage= () => {
         </div>
       ) : (
         // Render the list of quizzes
-        // <QuizzesList quizzes={quizzes} onStartQuiz={onStartQuiz} />
         <DBQuizzesList onStartQuiz={onStartQuiz} />
       )}
       <div>

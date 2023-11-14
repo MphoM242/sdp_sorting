@@ -2,11 +2,14 @@
 import React from 'react';
 import './MergeSortStyle.css'; 
 import Header from "../header/Header.js";
+import Sidebar from "../header/Sidebar.js";
+//import { Sidebar } from 'react-pro-sidebar';
 
 const MergeSort= () => {
   return (
     <div>
       <Header/>
+      <Sidebar/>
       <div className='content'>
         <h1>Sorting:</h1>
         <h2>What is merge sort?</h2>
