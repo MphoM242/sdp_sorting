@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import Quiz from './Quiz';
 import './QuizzesList.css';
 import { onAuthStateChanged } from "firebase/auth";

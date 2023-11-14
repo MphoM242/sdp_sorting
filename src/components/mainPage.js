@@ -20,32 +20,17 @@ const MainPage = () => {
           const uid = user.uid;
           // ...
           console.log("uid", uid);
-          window.alert("still signed in: "+ user.email);
+          //window.alert("still signed in: "+ user.email);
         } else {
           // User is signed out
           // ...
           console.log("user is logged out");
-          window.alert("user is logged out");
+          //window.alert("user is logged out");
         }
       });
      
   }, [])
   const navigate = useNavigate();
-  /*const handleLogout = () => {
-    //get user name:
-    const user = auth.currentUser;
-
-    signOut(auth).then(() => {
-      // Sign-out successful.
-      navigate("/login");
-      console.log("Signed out successfully");
-      window.alert("Signed out successfully:"+user.email);
-    }).catch((error) => {
-      // An error happened.
-      console.log("sign out error", error);
-      window.alert("sign out error"+user.email);
-    });
-  }*/
   return (
     <section>
     <nav>

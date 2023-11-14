@@ -12,16 +12,6 @@ export const SidebarData = [
 	icon: <BsFillSuitDiamondFill />,
 },
 {
-	title: "Insertion Sort",
-	path: "/practice/insertion",
-	icon: <BsFillSuitDiamondFill />,
-},
-{
-	title: "Selection Sort",
-	path: "/practice/selection",
-	icon: <BsFillSuitDiamondFill />,
-},
-{
 	title: "Merge Sort",
 	path: "/practice/merge",
 	icon: <BsFillSuitDiamondFill />,
@@ -43,24 +33,13 @@ export const SidebarData = [
 	icon: <BsFillSuitDiamondFill />,
 },
 {
-	title: "Other",
+	title: "Release Notes",
 	path: "/practice/other",
 	icon: <IoIcons.IoMdHelpCircle />,
-
-	iconClosed: <RiIcons.RiArrowDownSFill />,
-	iconOpened: <RiIcons.RiArrowUpSFill />,
-
-	subNav: [
-	{
-		title: "Brief Overview",
-		path: "/other/overview",
-		icon: <IoIcons.IoIosPaper />,
-	},
-	{
-		title: "Practice",
-		path: "/other/practice",
-		icon: <IoIcons.IoIosPaper />,
-	},
-	],
+},
+{
+	title: "User Manual",
+	path: "/practice/other",
+	icon: <IoIcons.IoMdHelpCircle />,
 },
 ];

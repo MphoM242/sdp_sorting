@@ -30,7 +30,6 @@ const DBQuizzesList = ({onStartQuiz}) => {
 
   return (
     <div>
-      <Header/>
       <h1>Merge Quizzes(firestore):</h1>
     <table className="styled-table">
       <thead>
@@ -41,13 +40,10 @@ const DBQuizzesList = ({onStartQuiz}) => {
         </tr>
       </thead>
       <tbody>
-        {quizzes.map((item)=>(
-          <tr key={item.id}>
-            <td>{item['Quiz ID']}</td>
-            <td>{item['Title']}</td>
-            <td>{item['Description']}</td>
-          </tr>
+      {quizzes.map(quiz => (
+          <Quiz key={quiz.id} quiz={quiz} onStartQuiz={onStartQuiz} />
         ))}
+        
       </tbody>
     </table>
     </div>

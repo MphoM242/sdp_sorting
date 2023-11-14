@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import QuizzesList from './QuizzesList';
 import DBQuizzesList from './DBQuizzesList';
+import Header from '../header/Header';
 
 const  MergeQuizzesPage= () => {
   const [quizzes, setQuizzes] = useState([
@@ -41,14 +42,15 @@ const  MergeQuizzesPage= () => {
   const [selectedQuiz, setSelectedQuiz] = useState(null);
 
   const onStartQuiz = (quizId) => {
+    console.log('Starting quiz', quizId);
+    window.alert('Starting quiz: ' + quizId);
     const selected = quizzes.find(quiz => quiz.id === quizId);
     setSelectedQuiz(selected);
   };
 
-  //handle back button:
-
   return (
     <div>
+      <Header/>
       <h1>Practice Quizzes: </h1>
       {selectedQuiz ? (
         <div>
@@ -61,6 +63,8 @@ const  MergeQuizzesPage= () => {
           </div>
         </div>
       ) : (
+        // Render the list of quizzes
+        // <QuizzesList quizzes={quizzes} onStartQuiz={onStartQuiz} />
         <DBQuizzesList onStartQuiz={onStartQuiz} />
       )}
       <div>
