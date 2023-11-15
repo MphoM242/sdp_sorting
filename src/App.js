@@ -59,6 +59,8 @@ function App() {
       
         <Route path="/Release_Notes" element={<ReleaseNotes />} />
         <Route path="/User_Manual" element={<UserManual />} />
+
+        <Route path="/" element={<MainPage />} />
         
         <Route path="/login" element={<Login />} />
         <Route path="/" element={user ?(

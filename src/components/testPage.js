@@ -1,7 +1,7 @@
 // src/components/testPage.js
 import React from 'react';
 
-const testPage = () => {
+const TestPage = () => {
   return (
     <div>
       <h2>Test Mode</h2>
@@ -10,4 +10,4 @@ const testPage = () => {
   );
 };
 
-export default testPage;
+export default TestPage;

@@ -9,6 +9,7 @@ import { auth } from './Firebase'
 import {signOut} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import Header from './header/Header';
+import Footer from './header/Footer';
 
 const MainPage = () => {
 
@@ -59,8 +60,10 @@ const MainPage = () => {
       <p style={{fontSize:'20px',color: 'blue'}}>SD Project By: <i>"insert cooler group name"</i><br/>
       </p>
     </div>
+    <Footer />
     </div>
     </nav>
+
     </section>
   );
 };

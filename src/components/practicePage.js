@@ -8,9 +8,9 @@ const PracticePage = () => {
   return (
     <div>
       <Header/>
-      <Sidebar />
       
       <div className='content'>
+      <Sidebar />
         <h1>Sorting:</h1>
         <h2>What is Sorting?</h2>
         <div className="definition">
@@ -62,7 +62,7 @@ const PracticePage = () => {
       </div>
 
       <div className='backButton'>
-        <a href='/main'>Back</a>
+        <a href='/'>Back</a>
       </div>
     </div>
 
