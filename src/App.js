@@ -11,7 +11,8 @@ import MergeQuizzesPage from './components/sorts/MergeQuizzesPage';
 import Quick from './components/sorts/Quick';
 import SortingAlgorithmsPage from './components/sorts/SortingAlgorithmsPage';
 
-import {ReleaseNotes,UserManual} from './components/sorts/OtherSort';
+//import {ReleaseNotes,UserManual} from './components/sorts/OtherSort';
+import ReleaseNotes from './components/ReleaseNotes';
 
 import Login from './components/Login';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -58,7 +59,6 @@ function App() {
         <Route path="/practice/quick" element={<Quick />} />
       
         <Route path="/Release_Notes" element={<ReleaseNotes />} />
-        <Route path="/User_Manual" element={<UserManual />} />
 
         <Route path="/" element={<MainPage />} />
         
