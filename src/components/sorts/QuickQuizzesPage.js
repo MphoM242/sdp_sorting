@@ -1,12 +1,12 @@
 import React, { useState,useEffect } from 'react';
 import QuizzesList from './QuizzesList';
-import DBQuizzesList from './DBQuizzesList2';
+import DBQuizzesList from './DBQuizzesList3';
 import { getFirestore,collectionGroup, collection, getDocs, or } from 'firebase/firestore';
 import { query, where,orderBy } from 'firebase/firestore';
 import Header from '../header/Header';
-import './BubbleQuizzesPageStyle.css';
+import './QuickQuizzesPageStyle.css';
 
-const  BubbleQuizzesPage= () => {
+const  QuickQuizzesPage= () => {
   const [quizzes, setQuizzes] = useState([]);
   const [selectedQuiz, setSelectedQuiz] = useState(null);
   const [quizQuestions, setQuizQuestions] = useState([]);
@@ -22,7 +22,7 @@ const  BubbleQuizzesPage= () => {
       const quizzesCol = collection(db, 'Quizzes');
 
       // Create a query to get documents from the "Quizzes" collection
-      const q = query(quizzesCol, where('Sort Type', '==', 'Bubble'), orderBy('Quiz ID', 'asc'));
+      const q = query(quizzesCol, where('Sort Type', '==', 'Quick'), orderBy('Quiz ID', 'asc'));
 
       try {
         const querySnapshot = await getDocs(q);
@@ -50,7 +50,7 @@ const  BubbleQuizzesPage= () => {
   }, [quizQuestions]);
   const fetchQuizQuestions = async (QuizID) => {
     const db=getFirestore();
-    const demoQuestions=collection(db,'Sorts','Bubble',QuizID.toString()); //REPLACE "0" WITH QUIZ ID
+    const demoQuestions=collection(db,'Sorts','Quick',QuizID.toString()); //REPLACE "0" WITH QUIZ ID
     //const demoQuestions = query(collectionGroup(db, '0'));
 
     try{
@@ -264,14 +264,14 @@ if (selected && selected.quizId ===3) {
         <DBQuizzesList onStartQuiz={onStartQuiz} />
       )}
       <div >
-            <a href='/practice/bubble/quizzes'>Back to Quiz List</a>
+            <a href='/practice/quick/quizzes'>Back to Quiz List</a>
       </div>
       <div>
-        <a href='/practice/bubble'>Back to Merge-Sort main page</a>
+        <a href='/practice/quick'>Back to Merge-Sort main page</a>
       </div>
     </div>
   );
 
 };
 
-export default BubbleQuizzesPage;
+export default QuickQuizzesPage;

@@ -1,3 +1,4 @@
+// src/components/practicePage.js
 import React from 'react';
 import './PracticePageStyle.css'; 
 import './MainPageStyle.css'; 

@@ -1,7 +1,4 @@
-/* SortingVisualizer.css */
-
-/* Style for the main SortingVisualizer container */
-@keyframes bounce {
+@keyframes bounceEffect {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
@@ -9,12 +6,7 @@
     transform: translateY(-30px);
   }
   60% {
-    transform: translateY(30px);
+    transform: translateY(-15px);
   }
 }
-
-#bubble-canvas {
-  animation: bounce 3s infinite;
-}
-
-
+ 

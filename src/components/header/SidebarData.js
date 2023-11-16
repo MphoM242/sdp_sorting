@@ -1,4 +1,6 @@
 import React from "react";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
 import { BsFillSuitDiamondFill } from "react-icons/bs";
@@ -11,22 +13,13 @@ export const SidebarData = [
 	iconClosed: <RiIcons.RiArrowDownSFill />,
 	iconOpened: <RiIcons.RiArrowUpSFill />,
 
-	iconClosed: <RiIcons.RiArrowDownSFill />,
-	iconOpened: <RiIcons.RiArrowUpSFill />,
-
 	subNav: [
 	{
-		title: "Overview", 
-		path: "/practice/merge", 
-		icon: <IoIcons.IoIosPaper />},
-	{
 		title: "Practice Quizzes",
-		path: "/practice/merge/quizzes",
+		path: "/practice/bubble/quizzes",
 		icon: <IoIcons.IoIosPaper />,
 	},
 	]
-
-
 },
 {
 	title: "Merge Sort",
@@ -38,10 +31,6 @@ export const SidebarData = [
 
 	subNav: [
 	{
-		title: "Overview", 
-		path: "/practice/merge", 
-		icon: <IoIcons.IoIosPaper />},
-	{
 		title: "Practice Quizzes",
 		path: "/practice/merge/quizzes",
 		icon: <IoIcons.IoIosPaper />,
@@ -52,15 +41,25 @@ export const SidebarData = [
 	title: "Quick Sort",
 	path: "/practice/quick",
 	icon: <BsFillSuitDiamondFill />,
+	iconClosed: <RiIcons.RiArrowDownSFill />,
+	iconOpened: <RiIcons.RiArrowUpSFill />,
+
+	subNav: [
+	{
+		title: "Practice Quizzes",
+		path: "/practice/quick/quizzes",
+		icon: <IoIcons.IoIosPaper />,
+	},
+	]
 },
 {
 	title: "Release Notes",
-	path: "/Release_Notes",
-	icon: <IoIcons.IoIosPaper />,
+	path: "/practice/other",
+	icon: <IoIcons.IoMdHelpCircle />,
 },
 {
 	title: "User Manual",
-	path: "/User_Manual",
-	icon: <IoIcons.IoIosPaper />,
+	path: "/practice/other",
+	icon: <IoIcons.IoMdHelpCircle />,
 },
 ];

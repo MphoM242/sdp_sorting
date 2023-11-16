@@ -1,115 +1,115 @@
-
 .login-page {
-  width: 500px;
-  padding: 35px;
-  margin: 0 auto 10px;
+    width: 500px;
+    padding: 35px;
+    margin: 0 auto 10px;
+  
+    border: solid;
+    border-radius: 35px;
+    border-width: 5px;
+    border-color: #460c0c;
+    background: #eee2e2;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .login-page .form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    font-size: 20px;
+    position: relative;
+    margin-right: 50px;
 
-  border: solid;
-  border-radius: 35px;
-  border-width: 5px;
-  border-color: #460c0c;
-  background: #eee2e2;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.login-page .form{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  text-align: left;
-  font-size: 20px;
-  position: relative;
-  margin-top: 15px;
-}
-
-.login-page .input{
-  width: 100%;
-  height: 40px;
-  background-color: #f2f7f2;
-  border: solid;
-  border-color: rgb(7, 102, 9);
-  border-width: 2px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-  padding-left: 15px;
-  font-size: 18px;
-}
-
-.login-page .p{
-  font-size: 15px;
-  text-align: center;
-  margin-top:0px;
-  margin-bottom: 100x;
-}
-
-.login-page .h1{
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2px;
-}
-
-.login-page .button{
-    width: 50%;
-    height: 50px;
-    background-color: #63f463;
-    color: rgb(10, 10, 10);
-    font-size: 25px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .login-page .input{
+    width: 100%;
+    height: 40px;
+    background-color: #f2f7f2;
     border: solid;
     border-color: rgb(7, 102, 9);
     border-width: 2px;
     border-radius: 15px;
-    margin-top:5px;
-    margin-bottom: 30px;
-    margin-left: 50%;
-    transform: translate(-50%, 0%);
-    position: relative;
-}
-
-.admin-login{
-  width: 300px;
-  height: 50px;
-  padding: 55px;
-  margin: 0 auto 100px;
-  border: solid;
-  border-width: 1px;
-  border-color: rgb(70, 14, 12);
-  background: #eac8bf;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  position: relative;
-  left: 0%;
-  transform: translate(0%, 15%);
-}
-
-.admin-button{
-    width: 50%;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    font-size: 18px;
+  }
+  
+  .login-page .p{
+    font-size: 15px;
+    text-align: center;
+    margin-top:0px;
+    margin-bottom: 100x;
+  }
+  
+  .login-page .h1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+  
+  .login-page .button{
+      width: 50%;
+      height: 50px;
+      background-color: #63f463;
+      color: rgb(10, 10, 10);
+      font-size: 25px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      border: solid;
+      border-color: rgb(7, 102, 9);
+      border-width: 2px;
+      border-radius: 15px;
+      margin-top:5px;
+      margin-bottom: 30px;
+      margin-left: 50%;
+      transform: translate(-50%, 0%);
+      position: relative;
+  }
+  
+  .admin-login{
+    width: 300px;
     height: 50px;
-    background-color: #efbf7c;
-    color: rgb(10, 10, 10);
-    font-size: 20px;
+    padding: 55px;
+    margin: 0 auto 100px;
     border: solid;
-    border-color: rgb(102, 7, 7);
-    border-width: 2px;
-    border-radius: 15px;
-    margin-top:5px;
-    margin-bottom: 30px;
-    margin-left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.admin-login .h2{
-  font-size: 25px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: -30px;
-  margin-bottom: 2px;
-}
+    border-width: 1px;
+    border-color: rgb(70, 14, 12);
+    background: #eac8bf;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    position: relative;
+    left: 0%;
+    transform: translate(0%, 15%);
+  }
+  
+  .admin-button{
+      width: 50%;
+      height: 50px;
+      background-color: #efbf7c;
+      color: rgb(10, 10, 10);
+      font-size: 20px;
+      border: solid;
+      border-color: rgb(102, 7, 7);
+      border-width: 2px;
+      border-radius: 15px;
+      margin-top:5px;
+      margin-bottom: 30px;
+      margin-left: 50%;
+      transform: translate(-50%, 0%);
+  }
+  
+  .admin-login .h2{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 2px;
+  }

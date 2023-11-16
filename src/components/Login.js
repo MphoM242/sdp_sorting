@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './LoginStyle.css';
+import Header from './header/Header';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,9 +30,10 @@ const Login = () => {
 
   return (
     <div>
+      <Header/>
     <div className='login-page'>
         <h1 className='h1'>Login Page:</h1>
-        <p className='p'>Please enter your email address and password to login.</p>
+        
 
       <div className='form'>
       <div>

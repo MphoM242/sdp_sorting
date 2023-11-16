@@ -1,6 +1,5 @@
 // HTMLComponent.js
 import React, { useEffect } from 'react';
-import '../MainPageStyle.css';
 
 function HTMLComponent() {
   useEffect(() => {
@@ -15,7 +14,7 @@ function HTMLComponent() {
     ctx.fillStyle = 'rgb(158, 231, 161)';
     ctx.fillRect(10, 10, canvas.width - 20, canvas.height - 20);
 
-    ctx.font = "16px Saria Condensed";
+    ctx.font = "16px Arial";
     ctx.fillStyle = "lightblue";
     
     // Specify the coordinates and text to be written
@@ -521,9 +520,9 @@ function again() {
   }, []);
 
   return (
-    <div class="merge-btn">
+    <div>
     {/* Position the "Start Sorting" button */}
-    <button id="left" style={{ position: 'absolute', top: '20px', right: '-80px' }}>Start</button>
+    <button id="left" style={{ position: 'absolute', top: '38px', right: '-20px' }}>Start</button>
       <button className="target-button" style={{ display: 'none' }}>Target 1</button>
       <canvas id="arrayCanvas" width="600" height="740"></canvas>
     </div>

@@ -1,8 +1,8 @@
+// src/components/practicePage.js
 import React from 'react';
 import './MergeSortStyle.css'; 
-import '../MainPageStyle.css';
 import Header from "../header/Header.js";
-import Sidebar from '../header/Sidebar.js';
+import Sidebar from "../header/Sidebar.js"
 
 const MergeSort= () => {
   return (
@@ -10,6 +10,7 @@ const MergeSort= () => {
       <Header/>
       <Sidebar/>
       <div className='content'>
+        <h1>Sorting:</h1>
         <h2>What is merge sort?</h2>
         <div className="definition">
           <p>
@@ -41,8 +42,8 @@ const MergeSort= () => {
         </p>
       </div>
 
-      <div class='btn'>
-        <a href='/practice'><button> Back</button></a>
+      <div className='backButton'>
+        <a href='/practice'>Back</a>
       </div>
     </div>
 

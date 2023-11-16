@@ -2,20 +2,21 @@ import React, { useState } from 'react';
 import './SortingAlgorithmsPage.css'; 
 import BubbleSortVisualizer from './BubbleSortVisualizer';
 import MergeSortVisualizer from './MergeSortVisualizer';
+import QuickSortVisualizer from './QuickSortVisualizer';
 //import QuickSortVisualizer from './QuickSortVisualizer';
 import menuIcon from  '../../images/MenuIcon.png';
-import Header from '../header/Header';
+
 
 const sortingAlgorithms = [
   {
     title: 'Bubble Sort',
-    description: 'Bubble Sort is a sorting algorithm that operates by swapping nearby elements repeatedly if they are out of order. After every loop or pass, the largest item (in increasing order) or the lowest element (in decreasing order) reaches the end. The list is traversed again and again until it is sorted.',
+    description: 'Bubble Sort is a sorting algorithm that operates by swapping nearby elements repeatedly if they are out of order. After every loop or pass, the largest item (in increasing order) until it reaches the end. The list is traversed again and again until it is sorted.',
     // Add more properties as needed
   },
   // Add information for other sorting algorithms
   {
     title: 'Merge Sort',
-    description: 'Merge Sort uses the divide and conquer algorithm by dividing the input array into smaller subarrays, sort each subarray, and then then merges the subarrays back together to obtain a sorted array',
+    description: 'Merge Sort uses the divide and conquer algorithm by dividing the input array into smaller subarrays, sort each subarray, and then merges the subarrays back together to obtain a sorted array',
     // Add more properties as needed
   },
   {
@@ -45,8 +46,7 @@ const SortingAlgorithmsPage = () => {
       style={{ backgroundImage: `url(${menuIcon})` }}
       ></div>
     </div>
-
-    <Header/>
+    <h1 className="page-title">Visualize Sorting Algorithms</h1>
     <p className="page-description">
       Welcome to the Sorting Algorithms visualization page. Learn and understand how different sorting algorithms work and compare their performance. Click on "Visualize" to see them in action!
     </p>
@@ -65,7 +65,7 @@ const SortingAlgorithmsPage = () => {
             <div key={index} className="algorithm-card">
               <h2>{algorithm.title}</h2>
               <p>{algorithm.description}</p>
-              <div class="visualise-btn"><button onClick={() => startVisualization(algorithm)} className="visualize-button">Visualize</button></div>
+              <button onClick={() => startVisualization(algorithm)} className="visualize-button">Visualize</button>
             </div>
           ))}
         </div>
@@ -78,10 +78,10 @@ const SortingAlgorithmsPage = () => {
               visualizerAlgorithm.title === 'Merge Sort' ? (
                 <MergeSortVisualizer />
               ) :
-            /* (
+             
                 visualizerAlgorithm.title === 'Quick Sort' ? (
                   <QuickSortVisualizer />
-                ) :*/ null
+                ) :null
            // )
           )}
         </div>

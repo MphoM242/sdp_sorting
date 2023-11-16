@@ -119,7 +119,6 @@ html{
 	margin: 0 auto;
 	padding: 0.5rem 0 0 1.5rem;
 	flex-grow: 1;
-  background-color: none;
 }
 
 .login-container {

@@ -1,3 +1,6 @@
+/* SortingVisualizer.css */
+
+/* Style for the main SortingVisualizer container */
 .sorting-visualizer {
     display: flex;
     flex-direction: column;
@@ -98,7 +101,7 @@
   }
   
   /* src/components/PracticePage.css (Create this file if it doesn't exist) */
-  .mergequizzes-page {
+  .practice-page {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,53 +120,14 @@
   .content {
     flex-grow: 1;
     padding: 30px;
-    text-align: left;
-    border: #460c0c;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    text-align: center;
+  
   }
   
-  .quiz{
+  .definition{
     font-size: 20px;
     text-align: left;
-    background-color: rgb(178, 242, 180);
+    background-color: rgb(158, 231, 161);
     padding: 10px;
-    margin-bottom: 30px;
-  }
-
-  .hover-button:hover {
-    width: 200px;
-    height: 50px;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
-
-  .hover-button {
-    width: 200px;
-    height: 50px;
-    background-color: #79e07d;
-    color: rgb(10, 10, 10);
-    font-size: 16px;
-    border: solid;
-    border-color: rgb(7, 102, 9);
-    border-width: 2px;
-    border-radius: 15px;
-    margin-top:20px;
-    margin-bottom: 30px;
-  }
-
-  .styled-button{
-    width: 100px;
-    height: 25px;
-    background-color: #f2f7f2;
-    color: rgb(10, 10, 10);
-    font-size: 14px;
-    border: solid;
-    border-color: rgb(48, 71, 49);
-    border-width: 2px;
-    border-radius: 15px;
-    margin-top: 20px;
     margin-bottom: 30px;
   }

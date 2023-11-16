@@ -5,8 +5,6 @@ import { getFirestore,collectionGroup, collection, getDocs, or } from 'firebase/
 import { query, where,orderBy } from 'firebase/firestore';
 import Header from '../header/Header';
 import './MergeQuizzesPageStyle.css';
-import '../MainPageStyle.css';
-import Sidebar from '../header/Sidebar';
 
 const  MergeQuizzesPage= () => {
   const [quizzes, setQuizzes] = useState([]);
@@ -154,12 +152,12 @@ if (selected && selected.quizId ===3) {
     const currentQuestion=quizQuestions[currentQuestionIndex];
     const currentAnswer=userAnswers[currentQuestionIndex];
     return(
-      <div className='question-container'>
+      <div>
         <h3>Question {currentQuestionIndex+1}</h3>
         <p>{currentQuestion.question}</p>
-        <form className='options-container'>
+        <form>
           {currentQuestion.options.filter((option)=>option).map((option,index)=>(
-            <div className='option' key={index}>
+            <div key={index}>
               <input
                 type="radio"
                 id={'option${index}'}
@@ -200,7 +198,7 @@ if (selected && selected.quizId ===3) {
       const { totalScore, wrongAnswers } = calculateScore();
 
       return (
-        <div className='result-container'>
+        <div>
           <h3>Quiz Results</h3>
           <p><b>Your Total Score:</b> {totalScore} / {quizQuestions.length}</p>
 
@@ -225,55 +223,13 @@ if (selected && selected.quizId ===3) {
               </div>
             )
           ))}
-          <div class='btn'>
-            <a href='/practice/merge/quizzes'><button>Back to Quiz List</button></a>
-      </div>
         </div>
       );
     }
+    return null;
   };
 
   return (
-    <div>
-      <Header />
-      <Sidebar/>
-      <h1 className='header'>Practice Quizzes: </h1>
-      {selectedQuiz ? (
-        <div className='content'>
-          <h1>Quiz: {selectedQuiz.title}</h1>
-
-          {quizStarted ? (
-            quizQuestions.length > 0 && currentQuestionIndex < quizQuestions.length ? (
-              <div className='quiz'>
-                {renderResultsAndFeedback()}
-                {quizSubmitted ? null : (
-                  <div>
-                    {renderQuestions()}
-                    <div>
-                      <p className='p'><b>UNANSWERED QUESTIONS: </b>{unansweredQuestions().join(', ')}</p>
-                    </div>
-                    {renderNavigation()}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div>
-                <button className='hover-button' onClick={() => handleQuizSubmit()}>Submit</button>
-              </div>
-            )
-          ) : (
-            <button className='hover-button' onClick={() => handleStart(selectedQuiz.quizId)}>Start Quiz</button>
-          )}
-        </div>
-      ) : (
-        <DBQuizzesList onStartQuiz={onStartQuiz} />
-      )}
-      <div class='btn'>
-        <a href='/practice/merge'><button>Back to Merge Main Page</button></a>
-      </div>
-    </div>
-  );
-  /*return (
     <div>
       <Header />
       <h1>Practice Quizzes: </h1>
@@ -286,7 +242,7 @@ if (selected && selected.quizId ===3) {
               <div className='quiz'>
                 {renderResultsAndFeedback()}
                 {quizSubmitted ? null : (
-                  <div className='quiz'>
+                  <div>
                     {renderQuestions()}
                     <div>
                       <p><b>Unanswered Questions: </b>{unansweredQuestions().join(', ')}</p>
@@ -314,7 +270,7 @@ if (selected && selected.quizId ===3) {
         <a href='/practice/merge'>Back to Merge-Sort main page</a>
       </div>
     </div>
-  );*/
+  );
 
 };
 

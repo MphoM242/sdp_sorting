@@ -4,15 +4,19 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import PracticePage from './components/PracticePage';
-//import TestPage from './components/TestPage';
+import TestPage from './components/TestPage';
 import Bubble from './components/sorts/Bubble';
-import BubbleQuizzesPage from './components/sorts/BubbleQuizzesPage';
+import Insertion from './components/sorts/Insertion';
+import Selection from './components/sorts/Selection';
 import Merge from './components/sorts/Merge';
 import MergeQuizzesPage from './components/sorts/MergeQuizzesPage';
+import BubbleQuizzesPage from'./components/sorts/BubbleQuizzesPage';
+import QuickQuizzesPage from'./components/sorts/QuickQuizzesPage';
 import Quick from './components/sorts/Quick';
 import SortingAlgorithmsPage from './components/sorts/SortingAlgorithmsPage';
-import ReleaseNotes from './components/ReleaseNotes';
-import AdminPage from './components/Admin';
+import AdminPage from './components/admin.js';
+
+import {OtherSort,Overview,Practice} from './components/sorts/OtherSort';
 
 import Login from './components/Login';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -47,18 +51,21 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/test" element={<MergeQuizzesPage />} />
+        <Route path="/test" element={<TestPage />} />
         <Route path="/practice" element={<PracticePage />} />
         <Route path="/visualizer" element={<SortingAlgorithmsPage />} />
         <Route path="/practice/bubble" element={<Bubble />} />
-        <Route path="/practice/bubble/quizzes" element={<BubbleQuizzesPage />} />
+        <Route path="/practice/insertion" element={<Insertion />} />
+        <Route path="/practice/selection" element={<Selection />} />
         <Route path="/practice/merge" element={<Merge />} />
         <Route path="/practice/merge/quizzes" element={<MergeQuizzesPage />} />
+        <Route path="/practice/bubble/quizzes" element={<BubbleQuizzesPage />} />
+        <Route path="/practice/quick/quizzes" element={< QuickQuizzesPage/>} />
         <Route path="/practice/quick" element={<Quick />} />
 
-        <Route path="/Release_Notes" element={<ReleaseNotes />} />
-        
-        <Route path="/" element={<MainPage />} />
+        <Route path="/other" element={<OtherSort />} />
+        <Route path="/other/overview" element={<Overview />} />
+        <Route path="/other/practice" element={<Practice />} />
 
         <Route path="/login" element={<Login />} />
         <Route

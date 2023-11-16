@@ -16,7 +16,7 @@ const DBQuizzesList = ({onStartQuiz}) => {
         //const user=firebase.auth().currentUser;
 
           try{
-            const q=query(quizzesCol,where('Sort Type','==','Merge'),orderBy('Quiz ID','asc'));
+            const q=query(quizzesCol,where('Sort Type','==','Bubble'),orderBy('Quiz ID','asc'));
             const querySnapshot=await getDocs(q);
             //const data=querySnapshot.docs.map(doc=>doc.data());
             const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -31,7 +31,7 @@ const DBQuizzesList = ({onStartQuiz}) => {
 
   return (
     <div>
-      <h1>Merge Quizzes(firestore):</h1>
+      <h1>Bubble Quizzes(firestore):</h1>
     <table className="styled-table">
       <thead>
         <tr>
