@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat&family=Saira+Condensed&display=swap');
+
+html{
+    height:100%
+  }
+  body{
+    transition: 1s ease-in-out;
+    background-image: url("../images/background.png");
+    background-size:cover;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    margin:0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+.full-height-grow {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+  .heading {
+    padding: 1rem;
+    font-family: 'Saira Condensed', sans-serif;
+    top: 0;
+    font-size: 2.6rem;
+    color: white;
+  }
+
+  .heading-sort {
+    font-family: 'Inter', sans-serif;
+    color: rgb(254,54,238);
+    font-size: 2.5rem;
+    padding-left: 22rem;
+  }
+
+  .main-heading-sort {
+    font-family: 'Inter', sans-serif;
+    color: rgb(254,54,238);
+    font-size: 2.5rem;
+    padding-left: 16rem;
+  }
+
+  .heading-sort h1, .heading h1, .main-heading-sort h1 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .heading-sort h1, .main-heading-sort h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .cube-chain img {
+    width:30vw;
+    max-width:700px;
+    height:40vh;
+    max-height: 700px;
+  }
+
+  .email-label {
+    background-image: url("../images/email.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+	background-position: center;
+    width: 18vw;
+    height: 5vh;
+    margin: 5rem;
+  }
+
+.email-label input, .password-label input {
+    
+    margin-top: 3rem;
+    outline: none;
+    background: #E6DBA7;
+    border: 2px solid black;
+    font-size: 1.25em;
+    padding: .5em;
+    color: inherit;
+    border-radius: 5px;
+}
+
+  .password-label {
+    background-image: url("../images/password.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+	background-position: center;
+    width: 14vw;
+    height: 5vh;
+    margin: 5rem;
+}
+
+  .mode-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 80%;
+  }
+
+.mode-menu img {
+    padding: 1rem;
+    width:15vw;
+    max-width:700px;
+    height:30vh;
+}
+
+.mode-menu a {
+    text-decoration: none;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.container {
+	max-width: 100%;
+	bottom: 0;
+	margin: 0 auto;
+	padding: 0.5rem 0 0 1.5rem;
+	flex-grow: 1;
+}
+
+.login-container {
+    width: 30%;
+	height: 90vh;
+	padding: 2rem 2rem;
+    background-image: url("../images/border.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+	background-position: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 10px 0px 10px;
+	bottom: 0;
+	width: 100%;
+	background-color: #031029;
+	font-weight: semi-bold;
+}
+
+.footer-nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+    padding-bottom: 0.7rem;
+}
+
+.footer-nav a {
+	color: inherit;
+	text-decoration: none;
+	padding-right: 2rem;
+	padding-left: 0;
+    
+}
+
+.footer-nav {
+	color: white;
+    padding-bottom: 0.7rem;
+}
+
+.footer-nav a:hover {
+	color: #ede50a;
+}
+  
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btn button {
+	color: white;
+	background-color: #CD366C;
+	padding: .75rem 1.5rem;
+	border-radius: .5rem;
+	text-decoration: none;
+	font-size: 1.5rem;
+	border: 2px solid black;
+	border: none;
+	cursor: pointer;
+    margin-left: 1rem;
+    margin-bottom: 4rem;
+	
+}
+
+.visualise-btn button {
+	color: white;
+	background-color: #CD366C;
+	padding: .75rem 1.5rem;
+	border-radius: .5rem;
+	text-decoration: none;
+	font-size: 1.5rem;
+	border: 2px solid black;
+	border: none;
+	cursor: pointer;
+  margin: .5rem;
+}
+
+.merge-btn button {
+	color: white;
+	background-color: #CD366C;
+	padding: .75rem 1.5rem;
+	border-radius: .5rem;
+	text-decoration: none;
+	font-size: 1.5rem;
+	border: 2px solid black;
+	border: none;
+	cursor: pointer;
+  margin-left: 15rem;
+}
+
+.bubble-btn button {
+	color: white;
+	background-color: #CD366C;
+	padding: .75rem 1.5rem;
+	border-radius: .5rem;
+	text-decoration: none;
+	font-size: 1.5rem;
+	border: 2px solid black;
+	border: none;
+	cursor: pointer;
+  margin-left: 5rem;
+  margin-top: 0.5rem;
+}
+
+.logout-btn button {
+	color: white;
+	background-color: #CD366C;
+	padding: .75rem 1.5rem;
+	border-radius: .5rem;
+	text-decoration: none;
+	font-size: 1.5rem;
+	border: 2px solid black;
+	border: none;
+	cursor: pointer;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    padding-right: 1rem;
+}
+
+.btn button:hover {
+	background-color: #BB2058;
+}
+
+.btn button:focus {
+	background-color: #D84C7E;
+
+}

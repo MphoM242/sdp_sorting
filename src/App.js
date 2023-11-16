@@ -10,9 +10,10 @@ import Merge from './components/sorts/Merge';
 import MergeQuizzesPage from './components/sorts/MergeQuizzesPage';
 import Quick from './components/sorts/Quick';
 import SortingAlgorithmsPage from './components/sorts/SortingAlgorithmsPage';
-
-//import {ReleaseNotes,UserManual} from './components/sorts/OtherSort';
 import ReleaseNotes from './components/ReleaseNotes';
+import AdminPage from './components/Admin';
+
+//import {OtherSort,Overview,Practice} from './components/sorts/OtherSort';
 
 import Login from './components/Login';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
@@ -36,14 +37,11 @@ function App() {
 
   useEffect(() => {
     const auth = getAuth(app);
-
-    // Add an observer to watch for changes in the user's authentication state
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
     });
 
-    // Clean up the observer when the component unmounts
     return () => unsubscribe();
   }, []);
 
@@ -55,19 +53,35 @@ function App() {
         <Route path="/visualizer" element={<SortingAlgorithmsPage />} />
         <Route path="/practice/bubble" element={<Bubble />} />
         <Route path="/practice/merge" element={<Merge />} />
-        <Route path="/practice/merge/quizzes" element={<MergeQuizzesPage /> }/>
+        <Route path="/practice/merge/quizzes" element={<MergeQuizzesPage />} />
         <Route path="/practice/quick" element={<Quick />} />
-      
-        <Route path="/Release_Notes" element={<ReleaseNotes />} />
 
-        <Route path="/" element={<MainPage />} />
+        <Route path="/Release_Notes" element={<ReleaseNotes />} />
         
+        <Route path="/" element={<MainPage />} />
+
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={user ?(
-            <MainPage />
-          ):(<Navigate to="/login"/>)} />
+        <Route
+          path="/"
+          element={
+            loading ? (
+              <p>Loading...</p>
+            ) : user ? (
+              user.email === 'admin@example.com' ? (
+                <AdminPage />
+              ) : (
+                <MainPage />
+              )
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
+        />
+
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </Router>
   );
 }
+
 export default App;

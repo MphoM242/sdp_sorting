@@ -10,6 +10,7 @@ import {signOut} from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import Header from './header/Header';
 import Footer from './header/Footer';
+import './MainPageStyle.css';
 
 const MainPage = () => {
 
@@ -45,7 +46,7 @@ const MainPage = () => {
           <b>NOTE: </b> Feedback may be sent to WITS Moodle page! <br />
       </p>
       <h2 style={{fontSize:'30px'}}>Choose mode:</h2>
-      <div class="button container">
+      <div className="button container">
         <a href="/practice">
           <img src={pracBut} alt="Practice Mode" className="resizedButton" />
         </a>
