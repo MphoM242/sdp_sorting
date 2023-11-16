@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './SortingAlgorithmsPage.css'; 
 import BubbleSortVisualizer from './BubbleSortVisualizer';
-//import MergeSortVisualizer from './MergeSortVisualizer';
+import MergeSortVisualizer from './MergeSortVisualizer';
 //import QuickSortVisualizer from './QuickSortVisualizer';
 import menuIcon from  '../../images/MenuIcon.png';
-
+import Header from '../header/Header';
 
 const sortingAlgorithms = [
   {
@@ -45,7 +45,8 @@ const SortingAlgorithmsPage = () => {
       style={{ backgroundImage: `url(${menuIcon})` }}
       ></div>
     </div>
-    <h1 className="page-title">Visualize Sorting Algorithms</h1>
+
+    <Header/>
     <p className="page-description">
       Welcome to the Sorting Algorithms visualization page. Learn and understand how different sorting algorithms work and compare their performance. Click on "Visualize" to see them in action!
     </p>
@@ -64,7 +65,7 @@ const SortingAlgorithmsPage = () => {
             <div key={index} className="algorithm-card">
               <h2>{algorithm.title}</h2>
               <p>{algorithm.description}</p>
-              <button onClick={() => startVisualization(algorithm)} className="visualize-button">Visualize</button>
+              <div class="visualise-btn"><button onClick={() => startVisualization(algorithm)} className="visualize-button">Visualize</button></div>
             </div>
           ))}
         </div>
@@ -74,11 +75,10 @@ const SortingAlgorithmsPage = () => {
             visualizerAlgorithm.title === 'Bubble Sort' ? (
               <BubbleSortVisualizer />
             ) : 
-             /*visualizerAlgorithm.title === 'Merge Sort' ? (
+              visualizerAlgorithm.title === 'Merge Sort' ? (
                 <MergeSortVisualizer />
               ) :
-              
-              (
+            /* (
                 visualizerAlgorithm.title === 'Quick Sort' ? (
                   <QuickSortVisualizer />
                 ) :*/ null

@@ -1,5 +1,6 @@
 /* SortingAlgorithmsPage.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Montserrat&family=Saira+Condensed&display=swap');
 
 
 /* Header section styles */
@@ -11,11 +12,18 @@
 }
 .sorting-algorithms-page {
   display: flex;
-  background-color:  rgb(158, 231, 161);
+  background-image: url("../../images/background.png");
+    background-size:cover;
   flex-direction: column;
   align-items: center;
 }
 
+.page-description {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 2rem;
+  color:aliceblue;
+  padding: 2rem;
+}
 
 .algorithm-list {
   text-align: centre; /* Horizontally align the children to the left */
@@ -27,6 +35,7 @@
   background-color: rgb(247, 227, 227);
   padding:20px;
   margin: 20px;
+  font-family: "Saira Condensed", sans-serif;
   border-radius: 2px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   width: 500px; /* Adjust the width as needed */
@@ -46,8 +55,8 @@
 
 /* Style for the visualizer container (right side) */
 .visualizer-container {
-  position: fixed;
-  width: 50%; /* Adjust the width as needed */
+  /*position: fixed;*/
+  width: 30%; /* Adjust the width as needed */
   bottom: 1;
   left: 75%; /* Center horizontally */
   transform: translateX(-50%); /* Center horizontally */

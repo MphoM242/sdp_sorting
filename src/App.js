@@ -4,8 +4,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './components/MainPage';
 import PracticePage from './components/PracticePage';
-import TestPage from './components/TestPage';
+//import TestPage from './components/TestPage';
 import Bubble from './components/sorts/Bubble';
+import BubbleQuizzesPage from './components/sorts/BubbleQuizzesPage';
 import Merge from './components/sorts/Merge';
 import MergeQuizzesPage from './components/sorts/MergeQuizzesPage';
 import Quick from './components/sorts/Quick';
@@ -46,10 +47,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/test" element={<TestPage />} />
+        <Route path="/test" element={<MergeQuizzesPage />} />
         <Route path="/practice" element={<PracticePage />} />
         <Route path="/visualizer" element={<SortingAlgorithmsPage />} />
         <Route path="/practice/bubble" element={<Bubble />} />
+        <Route path="/practice/bubble/quizzes" element={<BubbleQuizzesPage />} />
         <Route path="/practice/merge" element={<Merge />} />
         <Route path="/practice/merge/quizzes" element={<MergeQuizzesPage />} />
         <Route path="/practice/quick" element={<Quick />} />

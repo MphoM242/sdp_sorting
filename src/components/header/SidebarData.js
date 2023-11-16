@@ -8,6 +8,25 @@ export const SidebarData = [
 	title: "Bubble Sort",
 	path: "/practice/bubble",
 	icon: <BsFillSuitDiamondFill />,
+	iconClosed: <RiIcons.RiArrowDownSFill />,
+	iconOpened: <RiIcons.RiArrowUpSFill />,
+
+	iconClosed: <RiIcons.RiArrowDownSFill />,
+	iconOpened: <RiIcons.RiArrowUpSFill />,
+
+	subNav: [
+	{
+		title: "Overview", 
+		path: "/practice/merge", 
+		icon: <IoIcons.IoIosPaper />},
+	{
+		title: "Practice Quizzes",
+		path: "/practice/merge/quizzes",
+		icon: <IoIcons.IoIosPaper />,
+	},
+	]
+
+
 },
 {
 	title: "Merge Sort",

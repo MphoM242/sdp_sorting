@@ -1,163 +1,176 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './BubbleSortVisualizer.css';
+import '../MainPageStyle.css';
 
-class BubbleSortVisualizer extends Component {
-    constructor() {
-      super();
-      this.state = {
-        userInput: '',
-        animationArray: [], // Store the state of the animation
-        sorting: false,
-        initialAnimation: true,
-        animationIndex: 0, // Index to track the animation step
-        paused: false, // Flag to pause sorting
-      };
+const BubbleSortComponent = () => {
+  const [arrayToSort, setArrayToSort] = useState(generateRandomArray());
+  const [currentStep, setCurrentStep] = useState(0);
+  const [isSorting, setIsSorting] = useState(false);
+  const [interruptSort, setInterruptSort] = useState(false);
+
+  useEffect(() => {
+    const canvas = document.getElementById("bubble-canvas");
+    const ctx = canvas.getContext("2d");
+    displayArray();
+  }, [arrayToSort, currentStep]);
+
+  useEffect(() => {
+    // Apply or remove the bounce animation based on the isSorting state
+    const canvas = document.getElementById("bubble-canvas");
+    if (isSorting) {
+      canvas.classList.add("bounce");
+    } else {
+      canvas.classList.remove("bounce");
     }
-  
-    handleInputChange = (event) => {
-      this.setState({ userInput: event.target.value });
-    };
-  
-    bubbleSort = async () => {
-      this.setState({ sorting: true, initialAnimation: false, paused: false });
-  
-      const array = this.state.userInput.split(',').map(Number);
-      const n = array.length;
-      const animationArray = [];
-  
-      for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-          if (array[j] > array[j + 1]) {
-            // Swap elements
-            let temp = array[j];
-            array[j] = array[j + 1];
-            array[j + 1] = temp;
-  
-            // Store the animation step
-            animationArray.push({
-              array: [...array], // Copy the current state of the array
-              indices: [j, j + 1], // Indices being compared
-            });
-          }
-        }
-      }
-  
-      // Add the final sorted array to the animationArray
-      animationArray.push({
-        array: [...array],
-        indices: [],
-      });
-  
-      // Animate the sorting process
-      for (let i = 0; i < animationArray.length; i++) {
-        this.setState({ animationArray: [animationArray[i]], animationIndex: i });
-        await new Promise((resolve) => {
-          if (this.state.paused) {
-            // Pause sorting
-            return;
-          }
-          setTimeout(resolve, 1000); // Adjust this delay as needed
-        });
-      }
-  
-      this.setState({ sorting: false });
-    };
-  
-    handleSortClick = () => {
-      if (!this.state.sorting) {
-        this.bubbleSort();
-      }
-    };
-  
-    handlePauseClick = () => {
-      this.setState({ paused: true });
-    };
-  
-    handleRevertClick = () => {
-      this.setState({
-        animationIndex: 0,
-        paused: false,
-      });
-    };
-  
-    handleResumeClick = () => {
-      this.setState({ paused: false });
-      this.animateSorting();
-    };
-  
-    animateSorting = async () => {
-      const { animationArray, animationIndex } = this.state;
-  
-      for (let i = animationIndex; i < animationArray.length; i++) {
-        this.setState({ animationArray: [animationArray[i]], animationIndex: i });
-        await new Promise((resolve) => {
-          if (this.state.paused) {
-            // Pause sorting
-            return;
-          }
-          setTimeout(resolve, 1000); // Adjust this delay as needed
-        });
-      }
-  
-      this.setState({ sorting: false });
-    };
-  
-    render() {
-      const { userInput, sorting, animationArray, initialAnimation, paused } = this.state;
-  
-      return (
-        <div className="sorting-visualizer">
-          <h1>Bubble Sort Visualizer</h1>
-          <input
-            type="text"
-            placeholder="Enter numbers (comma-separated)"
-            value={userInput}
-            onChange={this.handleInputChange}
-          />
-  
-          <div className="array-container">
-            <div className={`array-row ${sorting || initialAnimation ? 'sorting' : ''}`}>
-              {animationArray[0]?.array.map((value, idx) => (
-                <div
-                  className={`array-bar ${sorting || initialAnimation ? 'sorting' : ''}`}
-                  key={idx}
-                  style={{
-                    width: '30px',
-                    height: '30px',
-                    display: 'inline-block',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: '1px solid #007bff',
-                    borderRadius: '5px',
-                    marginRight: '5px',
-                    transition: 'all 0.2s ease-in-out', // CSS transition
-                    backgroundColor:
-                      animationArray[0]?.indices.includes(idx) && (sorting || initialAnimation)
-                        ? '#ff0000' // Highlight the elements being compared
-                        : '',
-                  }}
-                >
-                  {value}
-                </div>
-              ))}
-            </div>
-          </div>
-  
-          <button onClick={this.handleSortClick} disabled={sorting}>
-            Sort
-          </button>
-          <button onClick={this.handlePauseClick} disabled={!sorting || paused}>
-            Pause
-          </button>
-          <button onClick={this.handleRevertClick} disabled={!sorting || !paused}>
-            Revert
-          </button>
-          <button onClick={this.handleResumeClick} disabled={!sorting || !paused}>
-            Resume
-          </button>
-        </div>
-      );
-    }
+  }, [isSorting]);
+
+  function generateRandomArray() {
+    const size = Math.floor(Math.random() * 6) + 5;
+    return Array.from({ length: size }, () => Math.floor(Math.random() * 100));
   }
 
-export default BubbleSortVisualizer;
+  function displayArray(comparingIndices) {
+    const canvas = document.getElementById("bubble-canvas");
+    if (!canvas) {
+      // Canvas element not available, return
+      return;
+    }
+    const ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const bubbleWidth = 50;
+    const bubbleSpacing = 10;
+    const startY = canvas.height / 2 - bubbleWidth / 2;
+
+    arrayToSort.forEach((num, index) => {
+      const bubbleX = index * (bubbleWidth + bubbleSpacing);
+      const bubbleY = startY;
+
+      ctx.save();
+      ctx.translate(bubbleX + bubbleWidth / 2, bubbleY + bubbleWidth / 2);
+
+      ctx.translate(-(bubbleX + bubbleWidth / 2), -(bubbleY + bubbleWidth / 2));
+
+      const randomOffset = calculateRandomBounceOffset();
+
+      ctx.fillStyle = "lightblue";
+      ctx.beginPath();
+      ctx.arc(bubbleX + bubbleWidth / 2, bubbleY + bubbleWidth / 2 + randomOffset, bubbleWidth / 2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = "black";
+      ctx.font = "20px Arial";
+      ctx.fillText(num, bubbleX + bubbleWidth / 2 - 10, bubbleY + bubbleWidth / 2 + randomOffset + 5);
+
+      // Stroke in red when comparing
+      if (comparingIndices && (index === comparingIndices[0] || index === comparingIndices[1])) {
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(bubbleX + bubbleWidth / 2, bubbleY + bubbleWidth / 2 + randomOffset, bubbleWidth / 2, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.lineWidth = 1;
+      }
+
+      ctx.restore();
+
+      if (interruptSort) {
+        // Clear interruption flag and return to stop further displayArray calls
+        setInterruptSort(false);
+        return;
+      }
+    });
+
+    ctx.strokeStyle = "black";
+    ctx.font = "20px Arial";
+  }
+
+  function calculateRandomBounceOffset() {
+    const amplitude = 50;
+    const frequency = 0.1;
+    const direction = Math.random() < 0.5 ? 1 : -1;
+    return direction * amplitude * Math.sin(frequency * Math.random());
+  }
+
+  async function bubbleSort() {
+    setIsSorting(true);
+    setInterruptSort(false); // Reset interruption flag
+    let n = arrayToSort.length;
+    let swapped;
+    do {
+      swapped = false;
+      for (let i = 0; i < n - currentStep - 1; i++) {
+        displayArray([i, i + 1]);
+
+        if (arrayToSort[i] > arrayToSort[i + 1]) {
+          let temp = arrayToSort[i];
+          arrayToSort[i] = arrayToSort[i + 1];
+          arrayToSort[i + 1] = temp;
+          swapped = true;
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        if (interruptSort) {
+          // Interrupt the sorting process
+          setIsSorting(false);
+          return;
+        }
+      }
+      setCurrentStep(currentStep + 1);
+    } while (swapped && isSorting);
+
+    const resultElement = document.getElementById("result");
+    if (resultElement) {
+      resultElement.textContent = "Sorting completed!";
+    }
+    displayArray();
+    setIsSorting(false);
+  }
+
+  const clearAnimation = () => {
+    setIsSorting(false);
+    setInterruptSort(true); // Set interruption flag to stop further displayArray calls
+    setCurrentStep(0);
+    setArrayToSort(generateRandomArray());
+  };
+
+  const handleExternalEvent = () => {
+    clearAnimation();
+  };
+
+  useEffect(() => {
+    document.addEventListener('externalEvent', handleExternalEvent);
+
+    return () => {
+      document.removeEventListener('externalEvent', handleExternalEvent);
+    };
+  }, []);
+
+  return (
+    <div>
+      <h1 style={{fontFamily:"Saira Condensed", color: 'white'}}>Bubble Sort Practice</h1>
+      <p style={{fontFamily:"Saira Condensed", color: 'white'}}>The array will sort using 'Bubble Sort' without interruptions:</p>
+      <canvas
+        id="bubble-canvas"
+        width="600"
+        height="100"
+        onClick={() => bubbleSort()}
+        disabled={isSorting}
+      ></canvas>
+      <div class="bubble-btn">
+      <button
+        id="start-sort"
+        onClick={() => bubbleSort()}
+        disabled={isSorting}
+      >
+        Start Sorting
+      </button>
+      </div>
+      <p id="result">Sorting completed!</p>
+    </div>
+  );
+};
+
+export default BubbleSortComponent;

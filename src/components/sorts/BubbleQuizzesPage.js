@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import QuizzesList from './QuizzesList';
-import DBQuizzesList from './DBQuizzesList';
+import DBQuizzesListBubble from './DBQuizzesListBubble';
 import { getFirestore,collectionGroup, collection, getDocs, or } from 'firebase/firestore';
 import { query, where,orderBy } from 'firebase/firestore';
 import Header from '../header/Header';
@@ -8,7 +8,7 @@ import './MergeQuizzesPageStyle.css';
 import '../MainPageStyle.css';
 import Sidebar from '../header/Sidebar';
 
-const  MergeQuizzesPage= () => {
+const  BubbleQuizzesPage= () => {
   const [quizzes, setQuizzes] = useState([]);
   const [selectedQuiz, setSelectedQuiz] = useState(null);
   const [quizQuestions, setQuizQuestions] = useState([]);
@@ -24,7 +24,7 @@ const  MergeQuizzesPage= () => {
       const quizzesCol = collection(db, 'Quizzes');
 
       // Create a query to get documents from the "Quizzes" collection
-      const q = query(quizzesCol, where('Sort Type', '==', 'Merge'), orderBy('Quiz ID', 'asc'));
+      const q = query(quizzesCol, where('Sort Type', '==', 'Bubble'), orderBy('Quiz ID', 'asc'));
 
       try {
         const querySnapshot = await getDocs(q);
@@ -52,7 +52,7 @@ const  MergeQuizzesPage= () => {
   }, [quizQuestions]);
   const fetchQuizQuestions = async (QuizID) => {
     const db=getFirestore();
-    const demoQuestions=collection(db,'Sorts','Merge',QuizID.toString()); //REPLACE "0" WITH QUIZ ID
+    const demoQuestions=collection(db,'Sorts','Bubble',QuizID.toString()); //REPLACE "0" WITH QUIZ ID
     //const demoQuestions = query(collectionGroup(db, '0'));
 
     try{
@@ -226,7 +226,7 @@ if (selected && selected.quizId ===3) {
             )
           ))}
           <div class='btn'>
-            <a href='/practice/merge/quizzes'><button>Back to Quiz List</button></a>
+            <a href='/practice/bubble/quizzes'><button>Back to Quiz List</button></a>
       </div>
         </div>
       );
@@ -266,56 +266,14 @@ if (selected && selected.quizId ===3) {
           )}
         </div>
       ) : (
-        <DBQuizzesList onStartQuiz={onStartQuiz} />
+        <DBQuizzesListBubble onStartQuiz={onStartQuiz} />
       )}
       <div class='btn'>
-        <a href='/practice/merge'><button>Back to Merge Main Page</button></a>
+        <a href='/practice/bubble'><button>Back to Bubble Main Page</button></a>
       </div>
     </div>
   );
-  /*return (
-    <div>
-      <Header />
-      <h1>Practice Quizzes: </h1>
-      {selectedQuiz ? (
-        <div className='content'>
-          <h1>Quiz: {selectedQuiz.title}</h1>
-
-          {quizStarted ? (
-            quizQuestions.length > 0 && currentQuestionIndex < quizQuestions.length ? (
-              <div className='quiz'>
-                {renderResultsAndFeedback()}
-                {quizSubmitted ? null : (
-                  <div className='quiz'>
-                    {renderQuestions()}
-                    <div>
-                      <p><b>Unanswered Questions: </b>{unansweredQuestions().join(', ')}</p>
-                    </div>
-                    {renderNavigation()}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div>
-                <button className='hover-button' onClick={() => handleQuizSubmit()}>Submit</button>
-              </div>
-            )
-          ) : (
-            <button className='hover-button' onClick={() => handleStart(selectedQuiz.quizId)}>Start Quiz</button>
-          )}
-        </div>
-      ) : (
-        <DBQuizzesList onStartQuiz={onStartQuiz} />
-      )}
-      <div >
-            <a href='/practice/merge/quizzes'>Back to Quiz List</a>
-      </div>
-      <div>
-        <a href='/practice/merge'>Back to Merge-Sort main page</a>
-      </div>
-    </div>
-  );*/
 
 };
 
-export default MergeQuizzesPage;
+export default BubbleQuizzesPage;
