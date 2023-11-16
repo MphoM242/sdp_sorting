@@ -72,7 +72,7 @@ const DBQuizzesList = ({onStartQuiz}) => {
 
   return (
     <div>
-      <h1>Merge Quizzes(firestore):</h1>
+      <h1 className='header'>Merge Quizzes:</h1>
     <table className="styled-table">
       <thead>
         <tr>

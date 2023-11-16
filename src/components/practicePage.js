@@ -1,6 +1,6 @@
-// src/components/practicePage.js
 import React from 'react';
 import './PracticePageStyle.css'; 
+import './MainPageStyle.css'; 
 import Sidebar from "./header/Sidebar.js";
 import Header from "./header/Header.js";
 
@@ -8,11 +8,11 @@ const PracticePage = () => {
   return (
     <div>
       <Header/>
+      <Sidebar />
       
       <div className='content'>
-      <Sidebar />
-        <h1>Sorting:</h1>
         <h2>What is Sorting?</h2>
+        
         <div className="definition">
           <p>
             Sorting is the process of arranging a list of elements in a particular order. For example, if we have a list of integers of length N, we may want to sort them in ascending order. <br />
@@ -61,8 +61,8 @@ const PracticePage = () => {
         </ul>
       </div>
 
-      <div className='backButton'>
-        <a href='/'>Back</a>
+      <div class='btn'>
+        <a href='/'><button> Back</button></a>
       </div>
     </div>
 

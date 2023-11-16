@@ -6,6 +6,7 @@
     justify-content: center;
     text-align: center;
     font-family: 'Saira Condensed', sans-serif;
+    color: black;
   }
   
   .h1{
@@ -15,24 +16,32 @@
     margin-bottom: 30px;
   }
 
+  .content .definition p{
+    color:rgb(6, 49, 3);
+  }
+
   .content {
     flex-grow: 1;
     padding: 30px;
     text-align: center;
     font-family: 'Saira Condensed', sans-serif;
+    background-color: rgb(179, 210, 177);
+    color: rgb(6, 49, 3);
   }
 
   .content h2{
-    color: aliceblue;
+    color: rgb(6, 49, 3);
     font-size: 3rem;
   }
 
 
-  .definition{
+  .content .definition{
     font-size: 20px;
     text-align: left;
     font-family: 'Saira Condensed', sans-serif;
     background-color: rgb(158, 231, 161);
+    color: rgb(6, 49, 3);
+    border: solid 2px rgb(6, 49, 3);
     padding: 10px;
     margin-bottom: 30px;
   }

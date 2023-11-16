@@ -39,7 +39,7 @@ const Header = () => {
         </div>  
       </div>
       
-      <div class="heading-sort">
+      <div class="main-heading-sort">
         <h1> SORTING </h1>
       </div>
         

@@ -13,8 +13,6 @@ import SortingAlgorithmsPage from './components/sorts/SortingAlgorithmsPage';
 import ReleaseNotes from './components/ReleaseNotes';
 import AdminPage from './components/Admin';
 
-//import {OtherSort,Overview,Practice} from './components/sorts/OtherSort';
-
 import Login from './components/Login';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Navigate } from 'react-router-dom';

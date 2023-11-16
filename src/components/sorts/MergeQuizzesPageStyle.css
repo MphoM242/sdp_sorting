@@ -1,11 +1,11 @@
-.sorting-visualizer {
+/*.sorting-visualizer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
   }
   
-  /* Style for the user input field and sort button */
+  
   .user-input-container {
     display: flex;
     align-items: center;
@@ -18,7 +18,7 @@
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 20px; /* Add margin to separate from array-container */
+    margin-bottom: 20px; 
   }
   
   .sort-button {
@@ -28,20 +28,20 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px; /* Add margin to separate from input field */
+    margin-left: 20px;  
   }
   
-  /* Style for the array container */
+  
   .array-container {
     display: flex;
-    margin-bottom: 20px; /* Add margin between input field and array-container */
+    margin-bottom: 20px;  
   }
   
-  /* Style for the array bars */
+ 
   .array-bar {
-    width: 30px; /* Adjust the width as needed for square bars */
-    height: 30px; /* Constant height for square bars */
-    margin: 0 2px; /* Add margin to separate bars horizontally */
+    width: 30px; 
+    height: 30px; 
+    margin: 0 2px; 
     background-color: #007bff;
     border-radius: 5px;
     display: flex;
@@ -52,15 +52,12 @@
     font-size: 16px;
   }
   
-  /* Additional styles for sorted array bars if needed */
   .sorted-bar {
-    background-color: #4caf50; /* Green color for sorted bars */
-    animation: none; /* Disable animation for sorted bars */
+    background-color: #4caf50; 
+    animation: none; 
   }
   
-  /* ----------------------------------------------------------------- */
-  /* Animation Zone */
-  /* ----------------------------------------------------------------- */
+
   section.animation-zone {
     position: relative;
     height: 60vh;
@@ -97,7 +94,7 @@
     line-height: 14px;
   }
   
-  /* src/components/PracticePage.css (Create this file if it doesn't exist) */
+  
   .mergequizzes-page {
     display: flex;
     flex-direction: column;
@@ -156,7 +153,7 @@
 
   .styled-button{
     width: 100px;
-    height: 25px;
+    height: 35px;
     background-color: #f2f7f2;
     color: rgb(10, 10, 10);
     font-size: 14px;
@@ -166,4 +163,144 @@
     border-radius: 15px;
     margin-top: 20px;
     margin-bottom: 30px;
+  }
+
+  .quiz .question-container{
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 30px;
+    color: rgb(10, 10, 10);
+    position: relative;
+
+  }
+  .quiz .options-container{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 30px;
+    color: rgb(10, 10, 10);
+    position: relative;
+  }
+
+  .quiz .options-row{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    margin-bottom: 5px;
+  }*/
+
+  body {
+    font-family: 'Arial', Arial, Helvetica, sans-serif;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    background-color: #4CAF50;
+    color: #634545;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 30px;
+    border: #460c0c;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  
+  .quiz-container {
+    margin-top: 60px;
+  }
+  
+  .question-container {
+    margin-top: 20px;
+  }
+
+  .hover-button:hover {
+    width: 200px;
+    height: 50px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .hover-button {
+    width: 200px;
+    height: 50px;
+    background-color: #79e07d;
+    color: rgb(10, 10, 10);
+    font-size: 16px;
+    border: solid;
+    border-color: rgb(7, 102, 9);
+    border-width: 2px;
+    border-radius: 15px;
+    margin-top:20px;
+    margin-bottom: 30px;
+  }
+
+  .question-container p{
+    color:rgb(29, 15, 102);
+    font-size: 20px;
+  }
+  
+  .options-container {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .option {
+    margin-bottom: 1px;
+    
+  }
+  
+  .button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  .link {
+    color: #0066cc;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .link:hover {
+    color: #004080;
+  }
+  
+  .result-container {
+    color: rgb(6, 70, 25);
+    align-items: center;
+  }
+  .result-container p{
+    color: rgb(29, 15, 102);
+    text-align: center;
+
+  }
+
+  .p{
+    color: rgb(102, 15, 15);
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
   }
