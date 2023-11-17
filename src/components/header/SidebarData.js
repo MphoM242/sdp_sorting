@@ -54,12 +54,12 @@ export const SidebarData = [
 },
 {
 	title: "Release Notes",
-	path: "/practice/other",
-	icon: <IoIcons.IoMdHelpCircle />,
+	path: "/release-notes",
+	icon: <AiIcons.AiFillFilePdf />,
 },
 {
 	title: "User Manual",
 	path: "/practice/other",
-	icon: <IoIcons.IoMdHelpCircle />,
+	icon: <AiIcons.AiFillFilePdf />,
 },
 ];

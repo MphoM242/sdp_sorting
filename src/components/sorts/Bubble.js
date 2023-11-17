@@ -1,16 +1,41 @@
 // src/components/practicePage.js
 import React from 'react';
-import './BubbleSortStyle.css'; 
 import Header from "../header/Header.js";
-import Sidebar from "../header/Sidebar.js"
+import Sidebar from "../header/Sidebar.js";
+import bubbleHow from '../sort-images/how-bubble-works.png';
+import bubbleAlg from '../sort-images/bubbleAlg.png';
+import { NavLink, useNavigate } from 'react-router-dom';
+
+import'../MainPageStyle.css';
+import '../PracticePageStyle.css';
 
 const BubbleSort= () => {
+
+const navigate = useNavigate();
+
+const goBack = () => {
+  navigate(-1);
+};
   return (
     <div>
-      <Header/>
       <Sidebar/>
+      <Header/>   
+      
+      <div className='title-box'>
+        <h1>Bubble Sort</h1>
+
+        <div className='button-row'>
+        <div class='btn' style={{marginLeft:'auto',marginRight:'250px',marginBottom:'-30px',marginTop:'30px'}}>
+          <a href='/practice'><button>Back to Sorting Main Page</button></a>
+        </div>
+        <div class='btn' style={{marginLeft:'auto',marginRight:'250px',marginBottom:'-30px',marginTop:'30px'}}>
+          <button onClick={goBack}>Back to previous page</button>
+        </div>
+        </div>
+
+      </div>
+
       <div className='content'>
-        <h1>Sorting:</h1>
         <h2>What is bubble sort?</h2>
         <div className="definition">
           <p>
@@ -18,6 +43,14 @@ const BubbleSort= () => {
              <br />
           </p>
         </div>
+
+        <h2>How does it work?</h2>
+        <div className="image-box" style={{alignContent:'center',alignItems:'center',justifyContent:'center'}}>
+          <img src={bubbleHow} alt="How Bubble Sort works" width="600" height="600"></img>
+          <img src={bubbleAlg} alt="Bubble Sort Algorithm" width="600" height="600"></img>
+
+        </div>  
+
       <h2>More help:</h2>
       <div className="definition">
         <p>
@@ -40,10 +73,6 @@ const BubbleSort= () => {
           This will guide and show you how the algorithm sorts numbers step-by-step. 
           <a href="/visualizer">Click here for Visualizer!</a>
         </p>
-      </div>
-
-      <div className='backButton'>
-        <a href='/practice'>Back</a>
       </div>
     </div>
 

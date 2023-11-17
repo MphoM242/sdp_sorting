@@ -23,6 +23,8 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Navigate } from 'react-router-dom';
 import { initializeApp } from 'firebase/app';
 
+import ReleaseNotes from './components/ReleaseNotes.js';
+
 const firebaseConfig = {
   apiKey: "AIzaSyB5y7LSWCoG2xLtotgvJQnvdWranfNmLgc",
   authDomain: "sortingplugin.firebaseapp.com",
@@ -66,6 +68,8 @@ function App() {
         <Route path="/other" element={<OtherSort />} />
         <Route path="/other/overview" element={<Overview />} />
         <Route path="/other/practice" element={<Practice />} />
+
+        <Route path="/release-notes" element={<ReleaseNotes />} />
 
         <Route path="/login" element={<Login />} />
         <Route

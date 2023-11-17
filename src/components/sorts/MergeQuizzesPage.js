@@ -263,10 +263,10 @@ if (selected && selected.quizId ===3) {
       ) : (
         <DBQuizzesList onStartQuiz={onStartQuiz} />
       )}
-      <div >
+      <div class='btn'>
             <a href='/practice/merge/quizzes'>Back to Quiz List</a>
       </div>
-      <div>
+      <div class='btn'>
         <a href='/practice/merge'>Back to Merge-Sort main page</a>
       </div>
     </div>

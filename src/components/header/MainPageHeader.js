@@ -26,6 +26,18 @@ const Header = () => {
     });
   }
 
+  const goBack = () => {
+    navigate(-1);
+  };
+
+  const goHome = () => {
+    navigate("/");
+  }
+
+  const goNext = () => {
+    navigate(+1);
+  };
+
   return (
     <div>
       
@@ -37,6 +49,7 @@ const Header = () => {
         <div class="logout-btn"> 
           <button onClick={handleLogout}>Logout</button>  
         </div>  
+
       </div>
       
       <div class="main-heading-sort">

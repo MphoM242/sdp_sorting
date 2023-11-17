@@ -4,12 +4,34 @@ import './PracticePageStyle.css';
 import './MainPageStyle.css'; 
 import Sidebar from "./header/Sidebar.js";
 import Header from "./header/Header.js";
+import sortHow from '../images/sorting.jpg';
+import {useNavigate } from 'react-router-dom';
 
 const PracticePage = () => {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1);
+  }
+  
   return (
     <div>
-      <Header/>
       <Sidebar />
+      <Header/>
+
+      <div className='title-box'>
+        <h1>Sorting</h1>
+
+        <div className='button-row'>
+        <div class='btn' style={{marginLeft:'auto',marginRight:'250px',marginBottom:'-30px',marginTop:'30px'}}>
+          <a href='/'><button>Main Page</button></a>
+        </div>
+        <div class='btn' style={{marginLeft:'auto',marginRight:'250px',marginBottom:'-30px',marginTop:'30px'}}>
+          <button onClick={goBack}>Back to previous page</button>
+        </div>
+        </div>
+
+      </div>
       
       <div className='content'>
         <h2>What is Sorting?</h2>
@@ -36,17 +58,25 @@ const PracticePage = () => {
             <li>Heap Sort</li>
           </ul>
       </div>
+
       <h2>General sorting example:</h2>
       <div className="definition">
-        <p>
+        <p style={{fontSize:'30px',textAlign:'center'}}>
           The following is a general example of sorting a list of integers in ascending order: <br />
         </p>
-        <div className="sortingExample">
-          <p>
-            <b>Input:</b> Unsorted list of integers:  [5, 1, 4, 2, 8] <br />
-            <b>Output:</b> Sorted list of integers:   [1, 2, 4, 5, 8] <br />
-          </p>
-        </div>
+        <div className="image" style={{alignContent:'center',alignItems:'center',justifyContent:'center'}}>
+          <img src={sortHow} alt="How Sorting works" width="600" height="600"></img>
+        </div>  
+      </div>
+
+      <h2>Practice:</h2>
+      <div className="definition">
+        <p style={{fontSize:'30px',textAlign:'center'}}>Click on the sorting algorithm you want to practice:</p>
+        <ul>
+          <li><div class='btn'><a href="/practice/bubble"><button>BUBBLE SORT</button></a></div></li>
+          <li><div class='btn'><a href="/practice/merge"><button>MERGE SORT</button></a></div></li>
+          <li><div class='btn'><a href="/practice/quick"><button>QUICK SORT</button></a></div></li>
+        </ul>
       </div>
 
       <h2>More help:</h2>
@@ -60,10 +90,6 @@ const PracticePage = () => {
           <li><a href="https://www.tutorialspoint.com/data_structures_algorithms/sorting_algorithms.htm">https://www.tutorialspoint.com/data_structures_algorithms/sorting_algorithms.htm</a></li>
           <li><a href="https://www.programiz.com/dsa/sorting-algorithm">https://www.programiz.com/dsa/sorting-algorithm</a></li>
         </ul>
-      </div>
-
-      <div class='btn'>
-        <a href='/'><button> Back</button></a>
       </div>
     </div>
 

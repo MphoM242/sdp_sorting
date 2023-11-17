@@ -73,6 +73,7 @@ const MainPage = () => {
             <ul>
                 <li><a href="https://github.com/KagisoLesomo/SortingPlugin">About Us</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href='/release-notes'>Release Notes</a></li>
             </ul>
             Copyright &#169; 2023 &#60;insert cool group name&#47;&#62;. All rights reserved.
         </nav>

@@ -6,6 +6,7 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
+import { useNavigate } from 'react-router-dom'
 
 const Nav = styled.div`
 background: #15171c;
@@ -46,6 +47,12 @@ const [sidebar, setSidebar] = useState(false);
 
 const showSidebar = () => setSidebar(!sidebar);
 
+const navigate = useNavigate();
+
+const goBack = () => {
+  navigate(-1);
+};
+
 return (
 	<>
 	<IconContext.Provider value={{ color: "#fff" }}>
@@ -56,7 +63,9 @@ return (
 		<h1
 			style={{ textAlign: "center",
 					marginLeft: "200px",
-					color: "green" }}
+					fontSize: "2.5rem",
+					color: "green"
+				 }}
 		>
 			Practice Mode
 		</h1>

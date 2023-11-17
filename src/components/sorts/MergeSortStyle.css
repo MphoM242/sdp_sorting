@@ -131,3 +131,38 @@ section.animation-zone div.array-container div.array-element p {
   padding: 10px;
   margin-bottom: 30px;
 }
+
+.title-box{
+  background: #15171c;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.title-box h1{
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 280px;
+  color: white;
+}
+
+.image-box{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: rgb(158, 231, 161);
+}
+
+.group-image{
+  margin-right: 280px;
+  background-color: rgb(158, 231, 161);
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
