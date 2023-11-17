@@ -4,7 +4,10 @@ import DBQuizzesList from './DBQuizzesList2';
 import { getFirestore,collectionGroup, collection, getDocs, or } from 'firebase/firestore';
 import { query, where,orderBy } from 'firebase/firestore';
 import Header from '../header/Header';
-import './BubbleQuizzesPageStyle.css';
+import './MergeQuizzesPageStyle.css';
+import './QuizzesList.css';
+import '../MainPageStyle.css';
+import '../PracticePageStyle.css';
 
 const  BubbleQuizzesPage= () => {
   const [quizzes, setQuizzes] = useState([]);

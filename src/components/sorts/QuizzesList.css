@@ -1,11 +1,11 @@
 .styled-table {
+    background-color: #ffffff;
     border-collapse: collapse;
     margin: 25px 0;
     margin-left: 60px;
     margin-right: 60px;
     font-size: 25px;
     font-family: sans-serif;
-    min-width: 400px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
 }
 
@@ -29,7 +29,7 @@
 }
 
 .quiz-row:hover{
-    background-color: rgb(158, 190, 156);
+    background-color: rgb(112, 190, 106);
     cursor: pointer;
 }
 
@@ -37,3 +37,26 @@
     background-color: rgb(77, 244, 77);
     cursor: pointer;
 }
+
+.h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: seashell;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 30px;
+    text-align: left;
+    border: #0d0c46;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(7, 7, 7, 0.7);
+  }

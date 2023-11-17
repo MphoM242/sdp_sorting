@@ -1,12 +1,22 @@
 import React, { useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import QuizzesList from './QuizzesList';
 import DBQuizzesList from './DBQuizzesList';
 import { getFirestore,collectionGroup, collection, getDocs, or } from 'firebase/firestore';
 import { query, where,orderBy } from 'firebase/firestore';
 import Header from '../header/Header';
+import Sidebar from '../header/Sidebar';
 import './MergeQuizzesPageStyle.css';
+import './QuizzesList.css'; //styles sort main pages
+import '../MainPageStyle.css';
+import '../PracticePageStyle.css';
 
 const  MergeQuizzesPage= () => {
+  const navigate = useNavigate(); //go back to whatever page you were on before
+  const goBack = () => {
+    navigate(-1);
+  };
+
   const [quizzes, setQuizzes] = useState([]);
   const [selectedQuiz, setSelectedQuiz] = useState(null);
   const [quizQuestions, setQuizQuestions] = useState([]);
@@ -231,8 +241,22 @@ if (selected && selected.quizId ===3) {
 
   return (
     <div>
+      <Sidebar />
       <Header />
-      <h1>Practice Quizzes: </h1>
+      <div className='title-box'>
+        <h1>Practice Quizzes: Merge Sort</h1>
+
+        <div className='button-row'>
+        <div class='btn' style={{marginLeft:'auto',marginRight:'250px',marginBottom:'-30px',marginTop:'30px'}}>
+          <a href='/practice/merge'><button>Merge Main Page</button></a>
+        </div>
+        <div class='btn' style={{marginLeft:'auto',marginRight:'250px',marginBottom:'-30px',marginTop:'30px'}}>
+          <button onClick={goBack}>Back to Previous Page</button>
+        </div>
+        </div>
+
+      </div>
+
       {selectedQuiz ? (
         <div className='content'>
           <h1>Quiz: {selectedQuiz.title}</h1>
@@ -252,23 +276,19 @@ if (selected && selected.quizId ===3) {
                 )}
               </div>
             ) : (
-              <div>
-                <button className='hover-button' onClick={() => handleQuizSubmit()}>Submit</button>
+              <div class='btn'>
+                <button onClick={() => handleQuizSubmit()}>Submit</button>
               </div>
             )
           ) : (
-            <button className='hover-button' onClick={() => handleStart(selectedQuiz.quizId)}>Start Quiz</button>
+            <div class='btn'>
+              <button onClick={() => handleStart(selectedQuiz.quizId)}>Start Quiz</button>
+            </div>
           )}
         </div>
       ) : (
         <DBQuizzesList onStartQuiz={onStartQuiz} />
       )}
-      <div class='btn'>
-            <a href='/practice/merge/quizzes'>Back to Quiz List</a>
-      </div>
-      <div class='btn'>
-        <a href='/practice/merge'>Back to Merge-Sort main page</a>
-      </div>
     </div>
   );
 

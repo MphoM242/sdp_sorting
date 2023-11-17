@@ -20,10 +20,12 @@
     padding: 30px;
     text-align: center;
     font-family: 'Saira Condensed', sans-serif;
+    background-color: rgb(2, 2, 2,0.15);
+    border-color: black;
   }
 
   .content h2{
-    color: aliceblue;
+    color: rgb(238, 94, 139);
     font-size: 3rem;
   }
 
@@ -65,9 +67,9 @@
   }
   
   .title-box h1{
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
-    margin-left: 280px;
+    margin-left: 250px;
     color: white;
   }
   

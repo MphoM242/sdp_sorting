@@ -110,17 +110,20 @@
   
   }
   
-  .h1{
+  .content h1{
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
+    color:aqua;
   }
   
   .content {
     flex-grow: 1;
     padding: 30px;
     text-align: center;
+    background-color: rgb(28, 4, 4, 0.5);
+
   
   }
   

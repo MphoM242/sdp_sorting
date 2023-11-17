@@ -1,29 +1,29 @@
-// QuizzesList.js
 import React,{useState,useEffect} from 'react';
-import Quiz from './Quiz';
-import './QuizzesList.css';
+import TestQuiz from './TestQuiz';
+import './sorts/QuizzesList.css';
 import { getFirestore, collection, getDocs, or } from 'firebase/firestore';
 import { query, where,orderBy } from 'firebase/firestore';
-import Header from '../header/Header';
+
+import Header from './header/Header';
 //Fetch data from firebase
-const DBQuizzesList = ({onStartQuiz}) => {
+const TestDBQuizzesList = ({onStartQuiz}) => {
 
   const [quizzes, setQuizzes] = useState([]);
     useEffect(()=>{
       const fetchData=async()=>{
         const db=getFirestore();
-        const quizzesCol=collection(db,'Quizzes');
+        const testDetailsCol=collection(db,'Test Details');
         //const user=firebase.auth().currentUser;
 
           try{
-            const q=query(quizzesCol,where('Sort Type','==','Quick'),orderBy('Quiz ID','asc'));
+            const q=query(testDetailsCol,where('Status','==','Upcoming'),orderBy('Test ID','asc'));
             const querySnapshot=await getDocs(q);
-            //const data=querySnapshot.docs.map(doc=>doc.data());
-            const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+            
+            const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data()}));
             setQuizzes(data);
           }
           catch(error){
-            console.log("Error getting quizzes: ",error);
+            console.log("Error getting upcoming test quizzes: ",error);
           }
     };
     fetchData();
@@ -34,14 +34,18 @@ const DBQuizzesList = ({onStartQuiz}) => {
     <table className="styled-table">
       <thead>
         <tr>
-          <th>Quiz ID</th>
+          <th>Test ID</th>
+          <th>Date</th>
+          <th>Time</th>
           <th>Title</th>
-          <th>Description</th>
+          <th>Duration</th>
+          <th>Location</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
       {quizzes.map(quiz => (
-          <Quiz key={quiz.id} quiz={quiz} onStartQuiz={onStartQuiz} />
+          <TestQuiz key={quiz.id} quiz={quiz} onStartQuiz={onStartQuiz} />
         ))}
         
       </tbody>
@@ -50,4 +54,4 @@ const DBQuizzesList = ({onStartQuiz}) => {
   );
 };
 
-export default DBQuizzesList;
+export default TestDBQuizzesList;
