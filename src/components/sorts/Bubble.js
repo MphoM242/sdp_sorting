@@ -8,6 +8,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 import'../MainPageStyle.css';
 import '../PracticePageStyle.css';
+import './QuizzesList.css'
 
 const BubbleSort= () => {
 

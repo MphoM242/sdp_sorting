@@ -259,7 +259,7 @@ if (selected && selected.quizId ===3) {
 
       {selectedQuiz ? (
         <div className='content'>
-          <h1>Quiz: {selectedQuiz.title}</h1>
+          <h1 style={{color:'white'}}>Quiz: {selectedQuiz.title}</h1>
 
           {quizStarted ? (
             quizQuestions.length > 0 && currentQuestionIndex < quizQuestions.length ? (
